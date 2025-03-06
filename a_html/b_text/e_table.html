@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e_table.html</title>
+  <style>
+    table, th, td {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <!--  
+    ! 테이블(표)
+    : 행(row), 열(column) 그리고 셀(cell)로 이루어짐
+
+    - 행(row): 가로
+    - 열(column): 세로
+  -->
+  <table>
+    <!--  
+      표의 제목 또는 설명을 삽입
+      : 제목이 표의 위쪽 중앙에 표시
+      : 필수 항목 X
+        - 스크린 리더 사용자에게 표를 설명
+    -->
+    <caption>표의 제목을 만드는 태그</caption>
+    <!--  
+      tr 태그: table row(각 행)
+      td 태그: table data(일반적인 테이블 셀)
+      th 태그: table header(테이블의 제목 셀, 기본적으로 굵은 글씨로 데이터가 입력)
+    -->
+    <!-- 1행 (2개의 셀을 지정) -->
+    <tr>
+      <th>1행 1열</th>
+      <th>1행 2열</th>
+      <th>1행 3열</th>
+    </tr>
+    <!-- 2행 (2개의 셀을 지정) -->
+    <tr>
+      <td>2행 1열</td>
+      <td>2행 2열</td>
+      <td>2행 3열</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>학생 출석부</caption>
+    <thead>
+      <tr>
+        <!-- 
+          주로 제일 왼쪽 열 또는 제일 상단의 행에 지정 
+          : 각 열과 행을 설명하는 용도
+        -->
+        <th>이름</th>
+        <th>출석 여부</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>이승아</td>
+        <td>참여</td>
+      </tr>
+      <tr>
+        <td>이도경</td>
+        <td>미참여</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td>총 참여인원</td>
+        <td>1</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- 
+    테이블 병합
+
+    rowspan속성
+    : 특정 셀이 여러 행에 걸쳐 확장되어야 할 때 사용
+    rowspan="2" 적용 시
+    : 해당 셀이 아래쪽으로 2행만큼 확장
+  -->
+  <hr />
+  <table>
+    <caption>rowspan 예제</caption>
+    <tr>
+      <!-- 
+        행의 병합이 이루어지는 경우
+        병합될 행이 제거되지 않으면
+        - 해당 행이 밀리는 현상이 발생
+      -->
+      <td rowspan="2">이 셀은 2행에 걸쳐 확장됩니다.</td>
+      <td>일반 셀</td>
+    </tr>
+    <tr>
+      <!-- 
+        <td>두번째 행의 첫 번째 셀</td> 
+      -->
+      <td>두번째 행의 두 번째 셀</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>colspan 예제</caption>
+    <tr>
+      <td colspan="2">이 셀은 2열에 걸쳐 확장됩니다.</td>
+      <!-- <td>일반 셀</td> -->
+    </tr>
+    <tr>
+      <td>2행 1열</td>
+      <td>2행 2열</td>
+    </tr>
+  </table>
+</body>
+</html>

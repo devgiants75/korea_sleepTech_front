@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 
+    meta(정보) 태그
+    : title, link, script, style 태그로 나타낼 수 없는 나머지 정보를 저장
+    : HTML 문서의 제작자, 내용, 키워드 같은 여러 정보를 검색엔진이나 브라우저에게 제공
+  -->
+  <!-- 
+    사용할 문자 집합을 정의(문자 인코딩 방식)
+    - 인코딩: 문자나 기호들을 컴퓨터가 이용할 수 있는 신호로 만드는 것
+    - 주로 한글 사용에서는 EUC-KR 또는 UTF-8 등이 사용 (웹: UTF-8 사용 권장)
+  -->
+  <meta charset="UTF-8">
+  <!--  
+    뷰포트: 실제 웹 페이지가 표시되는 영역
+    - 모바일 장치에만 사용 가능한 정보
+    - 스마트폰(테블릿)에서 웹 사이트를 오픈할 때
+      device가 모바일 장치(스마트폰)에 해당
+    - 모바일에서 웹 페이지의 가로 너비를 모바일 환경의 가로 너비와 일치시키거나
+    , 웹 사이트가 처음 출력될 때 확대/축소 여부 정도를 결정하는 정보를 포함
+
+    content=device-width
+    : 모바일 기기의 가로 너비에 맞춰서 출력
+    initial-scale=1.0
+    : 1배수로 출력
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="keywords" content="baseball, football, basketball">
+  <meta name="description" content="favorite sports">
+  <title>c_head.html</title>
+  <!-- 
+    style 태그: css 스타일 코드를 html 코드 내에서 작성 
+    link 태그: 외부 파일과 html 파일을 연결
+      - rel속성(relationship, 필수속성)
+        : 가져올 외부 문서와 현재 HTML이 어떤 관계인지 명시하는 속성
+      - href속성(hypertext reference, 필수속성)
+        : 브라우저가 참조할 문서의 특정 경로를 명시 또는 링크된 페이지의 URL을 명시
+    
+    - 스타일 선언 방식의 차이
+      1. link 태그를 사용 href 속성으로 css파일을 연결
+      2. style 태그 내에 명시
+  -->
+  <style>
+    body {
+      background-color: powderblue;
+    }
+    h1 {color: red;}
+    p {color: blue;}
+  </style>
+  <link rel="stylesheet" href="./c_head.css" />
+
+  <!-- 
+    script 태그: js 기능 코드를 html 코드 내에서 작성 또는 .js 파일을 연결
+
+    1. html 태그 내에서 작성
+    : script 태그내에 내용으로 코드 작성
+
+    2. .js 파일 연결
+    : src 속성을 사용하여 .js 파일을 경로를 지정
+  -->
+  <script>
+    console.log('평일 웹 프론트엔드');
+  </script>
+  <script src="./c_head.js"></script>
+  <!-- 
+    개발자 도구의 콘솔창 확인
+    : f12 > Console
+  -->
+</head>
+<body>
+  <h1>웹 문서의 제목</h1>
+  <p>문서의 내용</p>
+</body>
+</html>

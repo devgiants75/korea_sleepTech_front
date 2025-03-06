@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_prac.html</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--  
+    [문제 1]
+    페이지 전체의 제목: h2
+    테이블 영역 내 제목: caption
+
+    5행 4열의 테이블
+    1. 첫 번째 행은 테이블의 제목 thead
+      - 테이블의 제목 행으로 굵은 글씨를 사용
+    2. 나머지 행은 테이블의 본문 tbody
+
+    [문제 2]
+    - 테이블 구조
+      : 3행 4열의 구조
+      : 각 셀은 간단한 텍스트 데이터 포함
+        (1행 1열 ~ 3행 4열)
+      : 첫 번째 행의 첫 번째 셀
+        (오른쪽으로 두 열에 걸쳐 확장)
+      : 두 번째 행의 두 번째 셀
+        (아래로 두 행에 걸쳐 확장)
+
+    - 요구사항
+      table, tr, td 태그를 사용하여 제작
+      - colspan, rowspan 속성을 사용하여 테이블 모양 제작
+  -->
+  <h2>문제 1 - 상품 구성</h2>
+  <table>
+    <caption>
+      선물용과 가정용 상품 구성
+    </caption>
+    <thead>
+      <tr>
+        <th>용도</th>
+        <th>중량</th>
+        <th>갯수</th>
+        <th>가격</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">선물용</td>
+        <td>3kg</td>
+        <td>11~16과</td>
+        <td>35,000</td>
+      </tr>
+      <tr>
+        <td>5kg</td>
+        <td>18~26과</td>
+        <td>52,000</td>
+      </tr>
+      <tr>
+        <td rowspan="2">가정용</td>
+        <td>3kg</td>
+        <td>11~16과</td>
+        <td>35,000</td>
+      </tr>
+      <tr>
+        <td>5kg</td>
+        <td>18~26과</td>
+        <td>52,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>문제 2</h2>
+  <table>
+    <tr>
+      <td colspan="2">1행 1열</td>
+      <!-- <td>1행 2열</td> -->
+      <td>1행 3열</td>
+      <td>1행 4열</td>
+    </tr>
+    <tr>
+      <td>2행 1열</td>
+      <td rowspan="2">2행 2열</td>
+      <td>2행 3열</td>
+      <td>2행 4열</td>
+    </tr>
+    <tr>
+      <td>3행 1열</td>
+      <!-- <td>3행 2열</td> -->
+      <td>3행 3열</td>
+      <td>3행 4열</td>
+    </tr>
+  </table>
+</body>
+
+</html>

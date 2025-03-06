@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a_hyperlink.html</title>
+</head>
+<body>
+  <!--  
+  a 태그(anchor, 닻) & href 속성
+  : 링크 삽입 
+  - 마우스를 링크 위로 이동 시 커서가 작은 손의 아이콘으로 변경
+    >> 해당 태그를 클릭함으로써 현재의 페이지를 넘어 연결된 페이지로 이동
+
+  cf) 텍스트 링크
+    : 글자에 밑줄 + 파란색으로 변경
+    : 한 번이라도 해당 링크를 클릭하는 경우 자주색으로 변경
+    >> CSS 스타일을 통해 변경 가능
+  -->
+  <a href="">텍스트 링크</a>
+  <a href="https://www.naver.com">텍스트 링크</a>
+
+  <!-- 
+    href 속성
+    : hyper reference (이동할 페이지 주소값을 참조)
+
+    cf) 수신처에 # 기호 입력 시 해당 문서로 다시 이동(새로고침)
+  -->
+  <a href="#">현재 페이지로 다시 이동(새로고침)</a>
+
+  <!-- 
+  이미지 링크 
+  : 태그의 내용에 이미지를 삽입(img 태그, image)
+  -->
+  <a href="https://www.naver.com">
+    <img src="./animal-4085255_640.jpg" alt="네이버 바로가기">
+  </a>
+  <img src="./animal-4085255_640.jpg" alt="네이버 바로가기">
+
+  <!--  
+  하이퍼링크의 추가 속성
+
+  target 속성: 링크를 여는 방법을 지정하는 속성
+
+  1) _self: 기본값, 동일한 창과 탭에서 열림
+  2) _blank: 새 창 또는 새 탭에서 열림
+  -->
+
+  <hr />
+  <a href="https://www.google.com" target="_self">
+    _self 속성 사용
+  </a>
+  <br />
+  <a href="https://www.google.com" target="_blank">
+    _blank 속성 사용
+  </a>
+
+  <!--  
+    문서 이동 방법
+
+    1) 절대 경로
+      : 다른 웹 사이트에서 호스트되는 완전한 URL 주소
+      EX) https://www.naver.com
+
+    2) 상대 경로
+      : (현재) 웹 사이트 내에서 호스트되는 이미지에 대한 링크
+      - 슬래시(/)와 마침표(.)를 사용하여 현재의 파일을 기준으로 데이터 표시
+  -->
+  <hr />
+  <a href="https://cdn.pixabay.com/photo/2017/08/01/09/04/dog-2563759_1280.jpg">
+    강아지 이미지 열기
+  </a>
+</body>
+</html>

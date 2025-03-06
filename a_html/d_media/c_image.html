@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_image.html</title>
+</head>
+
+<body>
+  <!--  
+    img 태그(image, 이미지)
+    : src, alt 속성을 필수로 가지는 이미지 태그
+
+    cf) 이미지를 기술적으로 웹 페이지에 삽입하는 것이 아니라
+        , 해당 이미지에 링크되는 형식
+
+    1) src(source, 소스파일)
+      : 이미지 파일의 경로를 지정(웹 브라우저에게 전달)
+
+    2) alt(alter, 대체)
+      : 화면 낭독기 사용 시 이미지를 대신해 읽어줄 텍스트 입력
+      - 인터넷 불안정 | 경로가 정확하지 않을 때 텍스트가 표시
+  -->
+  <img src="현재이미지.jpg" alt="웃는 강아지 이미지 입니다." />
+
+  <!--  
+    이미지 선택 속성
+    1) width(너비)
+      - 이미지의 가로 폭 지정
+    2) height(높이)
+      - 이미지의 세로 폭 지정
+
+    cf) 너비와 높이값 중 1개만 지정해도 원본 이미지의 비율로
+        , 나머지 값이 자동 계산
+  -->
+  <img src="현재이미지.jpg" alt="너비값 지정 이미지" width="100px" />
+  <img src="현재이미지.jpg" alt="너비값 지정 이미지" width="200px" />
+  <img src="현재이미지.jpg" alt="너비값 지정 이미지" width="300px" />
+  <!--  
+    >> 속성 값이 여러 개일 경우 한 칸씩 띄어쓰기 작성 필수
+      3개 이상의 속성이 나열되어 가독성 저하 시 세로 정렬 권장
+  -->
+  <hr />
+  <img src="현재이미지.jpg" alt="너비값 지정 이미지" height="100px" />
+  <img src="현재이미지.jpg" alt="너비값 지정 이미지" height="200px" />
+  <img src="현재이미지.jpg" alt="너비값 지정 이미지" height="300px" />
+
+  <hr />
+
+  <img src="현재이미지.jpg" alt="너비/높이 지정 이미지" width="300px" height="300px">
+</body>
+
+</html>

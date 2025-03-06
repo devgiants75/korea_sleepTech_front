@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_element_level</title>
+</head>
+<body>
+  <!--  
+    cf) live server 단축키: alt + l + o
+
+    ! 요소: HTML의 기본 단위
+
+    1. 요소 구조(기본 형태)
+    <요소이름 속성="값">내용</요소이름>
+
+    2. 요소 종류(블록 레벨 VS 인라인 레벨)
+  -->
+  <a href="https://www.naver.com">네이버 바로가기</a>
+
+  <p>
+    블록 레벨 요소 예시
+    <div>1</div>
+    <ul>2</ul>
+    <ol>3</ol>
+    <header>4</header>
+    <!--  
+      cf) emmet 기능
+      - HTML5에서 지원하는 요소이름 작성 시 자동으로 
+        요소 구조를 지원함
+    -->
+  </p>
+  <p>새로운 줄에서 시작</p>
+
+  <!-- hr태그(horizon): 수평선의 긴 선이 작성 -->
+  <hr />
+  <a href="example.com">a태그(anchor)</a>
+  <span>span 태그: 인라인레벨요소</span>
+  <span>같은 줄에 작성</span>
+
+  <!-- 블록 VS 인라인 -->
+  <p>
+    블록 레벨 요소
+    <span>인라인 레벨 요소 중첩</span>
+  </p>
+
+  <span>
+    인라인 레벨 요소
+    <p>블록 레벨 요소 중첩 (X)</p>
+  </span>
+  
+  <!-- 
+    줄 복사 단축키
+    : alt(option) + shift + 위/아래
+    
+    줄 이동 단축키
+    : alt + 위/아래
+  -->
+  <p>안녕</p>
+  <p>안녕</p>
+  
+  </body>
+</html>

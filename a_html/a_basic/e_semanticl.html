@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e_semantic.html</title>
+</head>
+<body>
+  <header
+    style="background-color: #f5f5f5; height: 80px;"
+  >
+    header 태그: 페이지의 로고, 검색창, 사이트 메뉴를 삽입
+    +) nav 태그 포함 가능
+  </header>
+
+  <nav
+    style="
+      background-color: #333;
+      color: white;
+      height: 50px;
+    "
+  >
+    네비게이션 링크를 위한 영역 정의
+    nav 태그: 사용자가 사이트 내 다른 페이지로 이동할 수 있는 링크를 제공
+  </nav>
+
+  <main
+    style="
+      background-color: #e9e9e9;
+      height: 500px;
+    "
+  >
+    main 태그: 페이지의 주요 콘텐츠를 담는 영역 정의
+    <article
+      style="
+        background-color: #8c8c8c;
+        width: 70%;
+        height: 100%;
+        float: left;
+      "
+    >
+      article 태그: 독립적으로 구분되거나 재사용 가능한 콘텐츠를 담는 영역 정의
+      <section
+        style="padding: 20px;"
+      >
+        문서의 일반적인 공간 구분을 정의
+
+        <div
+          style="background-color: #a9a9a9; height: 100px;"
+        >
+          컨테이너 역할
+          : 특별한 의미X, 주로 스타일링 또는 배치 목적으로 사용
+        </div>
+      </section>
+    </article>
+    <aside
+      style="
+        background-color: #c9c9c9;
+        width: 30%;
+        height: 100%;
+        float: left;
+      "
+    >
+      메인 콘텐츠와는 별개의 콘텐츠
+      : 사이드바 | 광고 영역 정의
+    </aside>
+  </main>
+  <footer
+    style="
+      background-color: #b9b9b9;
+      height: 160px;
+    "
+  >
+    페이지의 푸터(바닥글) 영역 정의
+    : 저작권 정보, 연락처 정보, 링크(외부 사이트 연결) 등
+  </footer>
+</body>
+</html>

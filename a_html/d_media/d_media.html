@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d_media.html</title>
+</head>
+<body>
+  <!--  
+    멀티미디어
+    : 이미지, 오디오, 비디오, PDF 등 여러 형태의 데이터
+  -->
+
+  <!-- <object data="현재동영상.mp4"> </object> -->
+  <!-- <embed src="현재동영상.mp4" /> -->
+  <object data="정보처리기사20220424(학생용).pdf" width="300" height="300"></object>
+
+  <hr />
+
+  <!--  
+    audio: 배경음악, 효과음 등의 오디오 파일
+    video: 비디오 파일
+
+    1) controls
+      : 오디오나 비디오 파일을 통제하는 컨트롤 바 생성
+    2) autoplay
+      : 자동 실행
+    3) muted
+      : 소리 제거 
+    4) loop
+      : 반복 재생
+
+    5) width, height: 너비, 높이 값 지정
+  -->
+  <audio 
+    src="dark-future-logo-196217.mp3" 
+    controls 
+    autoplay
+    muted
+    loop
+  ></audio>
+
+  <video 
+    src="현재동영상.mp4" 
+    controls
+    autoplay
+    muted
+    loop
+  ></video>
+</body>
+</html>

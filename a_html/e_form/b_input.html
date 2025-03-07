@@ -20,7 +20,116 @@
       아이디(6자 이상)
       <input type="text" size="10" value="qwe123" maxlength="5" />
     </label>
-
+    <br />
+    <!-- cf) password 필드는 value 속성 사용 X -->
+    <label>
+      비밀번호(숫자, 영문자 혼합 8자)
+      <input type="password" maxlength="8" size="10" />
+    </label>
   </form>
+
+  <h2>2. search & url & email & tel 속성값</h2>
+  <!-- 
+  text 입력을 기본 & 각 용도에 맞게 기능을 추가 
+  >> 시각적으로는 text 필드와 동일
+  -->
+  <input type="search" />
+  <input type="url" />
+  <input type="email" />
+  <input type="tel" />
+
+  <form>
+    <ul>
+      배송 정보
+      <li>
+        <label for="search-item">상품 검색</label>
+        <input type="search" id="search-item" />
+      </li>
+      <li>
+        <label for="commend-site">상품 구매 추천 사이트</label>
+        <input type="url" id="commend-site" />
+      </li>
+      <li>
+        <label>
+          구매자 이메일
+          <!--  
+          email 속성값: 이메일 형식을 자동 검사
+          -->
+          <input type="email" />
+        </label>
+      </li>
+      <li>
+        <label>
+          구매자 연락처
+          <input type="tel" />
+        </label>
+      </li>
+    </ul>
+  </form>
+
+  <h2>3. checkbox(여러 개) & radio(1개) 속성값</h2>
+  <!-- >> 여러 항목 중에서 원하는 항목을 선택 -->
+  <!--  
+    checkbox와 radio 속성값은 서버에 데이터 전달할 값을
+      , value 속성을 사용하여 지정 (필수)
+
+    cf) label은 사용자 편의성을 위한 인식표
+
+    +) checked 속성: 기본 선택값 지정
+
+    cf) bool 속성
+      >> 속성의 값이 true/false 로 지정되는 경우
+        속성명만 지정 시 자동 true 값으로 인식
+        <-> 속성명 지정하지 않으면 자동 false 값으로 인식
+  -->
+  
+  <form>
+    <fieldset>
+      <legend>2025 프로야구 가을야구 진출팀 예측</legend>
+      <label>
+        <input type="checkbox" value="lotte" checked /> 롯데 자이언츠
+      </label>
+      <label>
+        <input type="checkbox" value="doosan" /> 두산 베어스
+      </label>
+      <label>
+        <input type="checkbox" value="kia" /> 기아 타이거즈
+      </label>
+      <label>
+        <input type="checkbox" value="lg" /> 엘지 트윈스
+      </label>
+    </fieldset>
+
+    <!-- 
+    name 속성
+      : 서버 폼에서 각각의 radio 요소를 구분하는 이름 
+      >> 같은 이름의 name 속성 중에는 반드시 한가지만 선택 가능
+    -->
+    <fieldset>
+      <legend>2025 프로야구 우승팀 예측</legend>
+      <label>
+        <input type="radio" value="lotte" name="winner" /> 롯데 자이언츠
+      </label>
+      <label>
+        <input type="radio" value="doosan" name="winner" /> 두산 베어스
+      </label>
+      <label>
+        <input type="radio" value="kia" name="winner" /> 기아 타이거즈
+      </label>
+      <label>
+        <input type="radio" value="lg" name="winner" /> 엘지 트윈스
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2025 프로야구 우승팀 예측 이벤트 결과 문자 수신동의</legend>
+      <label for="agree">동의함</label>
+      <input type="radio" id="agree" name="message" />
+      <br />
+      <label for="disagree">동의 안 함</label>
+      <input type="radio" id="disagree" name="message" />
+    </fieldset>
+  </form>
+
 </body>
 </html>

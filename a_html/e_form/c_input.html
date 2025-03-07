@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_input.html</title>
+</head>
+
+<body>
+  <h1>input 태그의 type 속성</h1>
+  <h2>4. submit & reset 속성값</h2>
+
+  <form action="">
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label>
+            이름 <input type="text" />
+          </label>
+        </li>
+        <li>
+          <label>
+            주소 <input type="address" />
+          </label>
+        </li>
+        <li>
+          <label>
+            이메일 <input type="email" />
+          </label>
+        </li>
+        <li>
+          <label>
+            배송지정 <input type="date" />
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <!-- submit & reset 속성값은 하나의 form 태그 내에서 동작 -->
+    <input type="submit" value="버튼에 표시할 내용" />
+    <input type="reset" value="RESET" />
+  </form>
+
+  <h2>5. range & number 속성값</h2>
+  <!--  
+    min: 최소값 / max: 최대값
+    step: 간격
+    value: 초기값
+  -->
+  <input type="range" min="0" max="6" step="2" value="0" />
+  <input type="number" min="10" max="20" step="3" value="20"/>
+
+  <h2>6. 기타 속성값</h2>
+  <input type="button" value="버튼에 표시할 내용"/>
+  <br />
+  <input type="file" />
+  <br /> 
+
+  <!-- 
+  화면에 보여지 않는 히든 필드: 관리자를 위한 버튼 
+  >> 사용자에게 보여지지 않으면서 
+    관리자가 알아야 하는 정보를 해당 필드로 입력
+  -->
+  <input 
+    type="hidden" 
+    name="관리자가 알아야 할 정보 설명" 
+    value="관리자가 알아야 할 실제 정보"
+  />
+</body>
+
+</html>

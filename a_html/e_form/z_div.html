@@ -15,6 +15,16 @@
       color: yellow;
       background-color: black;
     }
+
+    #unique1 {
+      background-color: lightblue;
+      color: white;
+      text-align: center;
+    }
+
+    #unique2 {
+      border: 3px dotted lightgreen;
+    }
   </style>
 </head>
 <body>
@@ -44,6 +54,20 @@
     2. id 속성
     : 단 하나의 요소를 지정하는 속성
     - 웹 문서에서 단 하나의 속성값을 하나의 요소에 지정
+
+    >> 샾(#) 문자 뒤에 이어서 아이디명을 입력
+  -->
+
+  <div id="unique1">id 속성 1</div>
+  <div id="unique2">id 속성 2</div>
+
+  <!--  
+    cf) id, class 명명규칙
+      1. id 속성은 유일성을 보장
+      2. 대소문자 구분 (header != HEADER)
+      3. 네이밍 규칙 - 숫자로 시작 가능 (권장 X)
+      4. 여러개의 단어를 사용하는 복합어는 -, _ 사용을 권장
+        (하이픈, 언더스코어)
   -->
 </body>
 </html>

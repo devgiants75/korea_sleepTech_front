@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d_input_attr.html</title>
+</head>
+
+<body>
+  <!--  
+  input 태그의 주요 속성
+  - autofocus: 자동으로 입력 커서에 대한 활성화 지정
+    >> 하나의 문서에 한 가지 input 요소에만 지정
+
+  - placeholder: 힌트 표시 속성 != value 속성
+    >> 내용값 입력 시 사라지는 속성
+
+  - readonly: 읽기 전용 필드 속성 (사용자 입력 X)
+
+  - required: 필수 입력 필드를 지정하는 속성
+
+  cf) bool 속성: 해당 속성의 옵션없이(속성값) 기능 사용에 대한 여부만 명칭으로 대신
+
+  - name: 각 입력 필드를 송신하는 속성
+    >> name 속성 생략 시 데이터에 대한 설명 X
+  -->
+  <form action="">
+    <h2>회원 정보 수정 페이지</h2>
+
+    <label for="id">아이디</label>
+    <input type="text" id="id" autofocus placeholder="아이디를 입력해주세요." value="qwe123" readonly />
+
+    <br />
+
+    <label for="pwd">패스워드</label>
+    <input type="password" id="pwd" placeholder="비밀번호를 입력해주세요." required name="password" />
+
+    <br />
+
+    <label for="email">이메일</label>
+    <input type="email" id="email" placeholder="이메일을 입력해주세요." value="devgiants75" readonly />
+
+    <br />
+
+    <input type="submit" />
+  </form>
+</body>
+
+</html>

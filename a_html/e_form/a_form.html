@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a_form.html</title>
+</head>
+<body>
+  <h3>롯데 자이언츠 티켓 예매</h3>
+  <!-- 서버에게 티켓 예매에 대한 정보를 전달할 form 요소 -->
+  <form>
+    <fieldset>
+      <!-- 
+      폼 요소 내부를 그룹으로 묶는 태그
+      : 하나의 폼 내에서 여러 개 작성 가능  
+      -->
+      <legend>날짜 선택</legend>
+    </fieldset>
+
+    <fieldset>
+      <legend>좌석 선택</legend>
+      <!-- fieldset 태그로 묶은 그룹에 제목을 붙임 -->
+
+      <input type="text" />
+      <!-- 
+        input 태그
+        : 사용자로부터 입력받을 수 있는 입력 필드를 정의
+        >> 빈 요소 (내용 입력란이 없음!)
+
+        - "type 속성(필수)": 입력 필드의 종류나 형태를 정의
+                >> input 태그의 형태를 여러가지로 변경 가능
+
+        - name 속성: 필드의 이름을 정의
+                >> 서버로 데이터 전송 시 해당 이름을 통해 데이터를 식별
+        - value 속성: 입력 필드의 초기값이나 현재값을 지정
+      -->
+
+      <label for=""></label>
+      <!-- 
+      다양한 폼 요소에 레이블을 붙이는 태그 : 인식표
+
+      cf) label 태그의 for 속성
+        : 인식표를 표시할 태그의 id값과 동일한 값으로 지정
+        >> id값은 하나의 웹 문서에서 고유한 값이기 때문에
+          , 다른 label의 for 속성값과 충돌 X
+
+      1) label 태그와 form 요소를 분리
+      2) label 태그의 내용 안에 form 요소를 삽입
+
+      >> label을 통해서 form 요소의 활성화가 가능
+      -->
+      <br />
+      <label>
+        아이디
+        <input type="text" />
+      </label>
+
+      <br />
+      <label>
+        <input type="text" />
+        비밀번호
+      </label>
+
+      <hr />
+      <label for="label">인식표</label>
+      <input type="text" id="label" />
+    </fieldset>
+  </form>
+</body>
+</html>

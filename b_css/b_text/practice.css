@@ -1,0 +1,43 @@
+h1 {
+  color: #0000ff;
+  font-size: 36px;
+  text-align: center;
+}
+
+h2 {
+  color: #0f0;
+  font-size: 28px;
+  text-align: left;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+p {
+  color: black;
+  font-size: 18px;
+  line-height: 1.6;
+  text-indent: 40px;
+  letter-spacing: 1.2px;
+  word-spacing: 2.4px;
+}
+
+a {
+  color: purple;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+}
+
+a:hover {
+  color: red;
+}
+
+a:visited {
+  color: gray;
+}
+
+ul {
+  color: brown;
+  font-size: 16px;
+  text-transform: uppercase;
+}

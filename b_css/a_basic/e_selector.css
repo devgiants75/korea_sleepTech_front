@@ -1,0 +1,62 @@
+.container {
+  background-color: black;
+  color: white;
+}
+
+.navi {
+  border: 5px solid lightblue;
+}
+
+.navi ul {
+  list-style: none;
+  background-color: white;
+}
+
+.navi ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+/* 가상 클래스 (동작) */
+.navi a:link, .navi a:visited {
+  /* 
+  :link
+  방문하지 않은 링크 
+  
+  :visited
+  방문한 적 있는 링크  
+  */
+  color: lightgray;
+}
+
+.navi a:visited {
+  color: black;
+}
+
+.navi a:hover {
+  /* 
+  사용자 동작 중
+  ! , 마우스를 웹 요소에 올려놓는 행위
+  */
+  background-color: black;
+  color: white;
+}
+
+.navi a:focus {
+  /*  
+  사용자 동작 중
+  , 초점이 맞춰져 있는 행위
+  */
+  background-color: pink;
+  color: black;
+}
+
+.navi a:active {
+  /*  
+  사용자 동작 중
+  , 웹 요소를 활성화하는 행위
+  >> 클릭하고 있는 동안
+  */
+  background-color: orange;
+  color: black;
+}

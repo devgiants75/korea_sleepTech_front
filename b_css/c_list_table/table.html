@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table.html</title>
+  <style>
+    /* caption-side 속성 */
+    caption {
+      /* caption-side 기본값: top(위) */
+      caption-side: bottom;
+      font-size: 8px;
+      color: #ccc;
+    }
+
+    table {
+      /* 표 전체 테두리: 1px(두께), solid(실선-종류), 색상 */
+      border: 1px solid black;
+
+      /* 
+      셀 사이의 여백 지정: border-spacing: 수평(좌우) 수직(상하) 
+      +) 값을 하나만 지정 시 '상하좌우' 모두 같은 값 지정
+      */
+      border-spacing: 10px 20px;
+
+      /* 
+      표와 셀 테두리를 합쳐주는 속성: border-collapse 
+      >> 기본값(seperate)
+      */
+      border-collapse: collapse;
+    }
+
+    th {
+      border: 1px solid pink;
+    }
+
+    td {
+      border: 1px solid orange;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>2025 프로야구 시범경기 결과</caption>
+    <tr>
+      <th>야구팀</th>
+      <th>03/08 토</th>
+      <th>03/09 일</th>
+    </tr>
+    <tr>
+      <td>롯데</td>
+      <td>4 : 3 승리</td>
+      <td>0 : 0 무승부</td>
+    </tr>
+    <tr>
+      <td>기아</td>
+      <td>3 : 4 패배</td>
+      <td>0 : 0 무승부</td>
+    </tr>
+  </table>
+</body>
+</html>

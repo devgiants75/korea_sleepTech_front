@@ -46,3 +46,56 @@ ul {
   font-weight: 900;
   text-decoration: underline;
 }
+
+/* 
+!자손(하위) 선택자 
+: 공백을 사용하여 적용
+
+A B { ... }
+>> A 내의 모든 B에 적용
+*/
+
+div p {
+  color: black;
+  background-color: yellow;
+  font-weight: 400;
+}
+
+/* 
+! 자식 선택자
+: > 기호를 사용하여 적용
+
+A > B { ... }
+>> A의 직접적인 자식 B에만 적용
+*/
+
+div > p {
+  color: red;
+}
+
+/*  
+! 인접 형제 선택자
+: 같은 부모를 가진 형제 중
+  - 첫 번째 동생 요소에만 적용
+: + 기호
+
+A + B { ... }
+*/
+
+#selector + span {
+  text-decoration: line-through;
+  color: black;
+}
+
+/* 
+! 형제 선택자 
+: 형제 요소에는 모두 적용
+: ~ 기호 
+
+cf) 형제 선택자는 기준 선택자(A) 이후의 요소에만 적용!
+
+A ~ B { ... }
+*/
+#all ~ span {
+  text-decoration: underline;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text02.html</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ffffff;
+    }
+
+    .hello {
+      background-color: white;
+      color: black;
+
+      text-align: left;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .justify {
+      /* 한 문장의 양쪽 끝 여백을 정렬: 문자 사이의 공백을 조절 */
+      text-align: justify;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- CSS 색상 표현법 -->
+  <!-- 
+  ! 16진수: 0 ~ f를 활용하여 표현
+    EX) #RRGGBB(6자리)
+
+    #0000ff - 파란색
+    #ff0000 - 빨간색
+    #00ff00 - 초록색
+
+    >> #000000 - 검은색 / #ffffff - 흰색
+
+    cf) #RGB(3자리) 축약형 사용 가능
+  -->
+  <h1 style="background-color: #0f0; color: #ff0000;">안녕하세요 :)</h1>
+  <p style="background-color: #ccc; color: #eee;">반갑습니다 :p</p>
+
+  <!-- 
+  ! RGB / RGBA 
+  : rgb 함수값을 사용 - rgb(r, g, b) / rgba(r, g, b, a)
+  : 각 원소마다 0부터 255까지의 숫자값을 가짐
+
+  cf) a: (alpha) - 투명도
+    >> 0(완전 투명) ~ 1(완전 불투명)
+  -->
+  <h2 style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">안녕하세요</h2>
+  <p
+    style="
+      background-color: rgba(0, 0, 255, 0.5);
+      color: rgba(255, 0, 0, 0.5);
+    "
+  >반갑습니다</p>
+
+  <!-- 
+  ! text-align 속성 (텍스트 정렬) 
+  : start, end, left, center, right
+  +) justify, match-parent
+
+  cf) 양쪽에 맞추어 문단을 정렬
+  -->
+
+  <p class="hello">텍스트 정렬</p>
+  <p class="hello center">텍스트 정렬</p>
+  <p class="hello justify">텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬텍스트 정렬</p>
+
+  <!--  
+  ! line-height 속성 (줄 간격)
+  : 기본값은 폰트 크기의 1.0배율
+  EX) 글자 크기가 16px의 문단의 줄 간격: 16px(위 / 아래 8px 씩)
+
+  cf) line-height의 값은 px값 사용을 하지 X
+    >> 현재 텍스트의 배율 형식을 활용
+
+  +) 텍스트의 세로 정렬에 활용
+  텍스트의 영역 높이값(height)과 line-height값을 일치시키는 경우
+    >> 세로로 가운데 정렬
+  -->
+
+  <p
+    style="
+      background-color: lightgoldenrodyellow;
+      color: lightblue;
+
+      /* 현재 글자 크기(16px)의 2배 */
+      line-height: 2;
+    "
+  >안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+
+  <p
+    style="
+      background-color: #fff;
+      color: #ccc;
+      font-size: 20px;
+      font-weight: 900;
+
+      height: 100px;
+
+      text-align: center;
+      /* 줄 간격과 해당 텍스트의 높이를 일치!: 세로 정렬 */
+      line-height: 100px;
+    "
+  >HTML</p>
+
+  <!--  
+  ! text-decoration 속성 (텍스트의 줄 표시)
+  >> a 태그의 스타일 지정에 사용
+
+  none, underline, overline, line-through
+  -->
+  
+  <!-- emmet: 태그의 속성사용 - 태그명[속성="값"] -->
+  <p style="text-decoration: none">none</p>
+  <p style="text-decoration: underline">underline</p>
+  <p style="text-decoration: overline">overline</p>
+  <p style="text-decoration: line-through">line-through</p>
+
+  <a href="" style="text-decoration: none; color: yellow;">
+    하이퍼링크
+  </a>
+
+  <!-- 
+  ! text-transform (텍스트 변환)
+  capitalize(대문자로 시작 + 소문자 표기)
+  uppercase(대문자 표기)
+  lowercase(소문자 표기)
+  -->
+  <div>
+    <p style="text-transform: capitalize;">text 변환 속성</p>
+    <p style="text-transform: uppercase;">text 변환 속성</p>
+    <p style="text-transform: lowercase;">TEXT 변환 속성</p>
+  </div>
+
+  <!--  
+  ! letter-spacing(글자 사이 간격), word-spacing(단어 사이 간격)
+  -->
+  <p style="letter-spacing: 4px;">letter-spacing</p>
+  <p style="word-spacing: 8px;">word spacing word spacing word spacing</p>
+
+  <!-- text-indent (들여쓰기) -->
+  <p style="text-indent: 20px;">text indent 속성</p>
+</body>
+</html>

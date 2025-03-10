@@ -1,0 +1,48 @@
+/* 전체선택자: * 기호 */
+* {
+  color: lightcoral;
+  margin: 0;
+  padding: 0;
+}
+
+/* 타입 선택자: 태그명 */
+h2 {
+  color: blue;
+}
+
+/* 범위가 좁을수록 스타일 우선순위가 높음 */
+p {
+  color: green;
+}
+
+ul {
+  background-color: lightblue;
+}
+
+/* 클래스 & 아이디 선택자 */
+.btn {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+/* 소스 코드 순서 적용 */
+.primary {
+  background-color: green;
+  color: yellow;
+}
+
+/* 아이디 > 클래스 선택자 */
+#basic {
+  font-size: 20px;
+  background-color: lightgray;
+}
+
+/* 
+그룹 선택자 
+: 태그, 클래스, 아이디 선택자를 나열하여 스타일 중복 적용
+*/
+.secondary, li {
+  font-weight: 900;
+  text-decoration: underline;
+}

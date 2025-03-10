@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d_selector.html</title>
+  <link rel="stylesheet" href="./d_selector.css" />
+</head>
+
+<body>
+  <!--  
+  ! 1. 전체 선택자: 스타일을 모든 문서 요소에 적용
+    >> * 기호를 사용하여 스타일을 한꺼번에 적용
+
+    cf) 전체 웹 브라웢의 기본 스타일 초기화에 사용
+    : 전체 요소들과 배경의 여백 제거에 활용
+
+  ! 2. 타입(요소, 태그) 선택자
+    : 해당 태그를 사용한 모든 요소에 적용
+
+  ! 3. 클래스 선택자
+  ! 4. 아이디 선택자
+  -->
+  요소 외부의 글자
+
+  <div>전체 선택자</div>
+  <p>문단</p>
+  <section>섹션 내용</section>
+
+  <hr />
+
+  <h2>타입 선택자</h2>
+  <p>문단</p>
+  <!-- ul>li*3 -->
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <hr />
+
+  <!-- button.btn*3 -->
+  <button class="btn" id="basic">기본 버튼</button>
+  <button class="btn primary">주요 버튼</button>
+  <button class="btn secondary">보조 버튼</button>
+
+  <!-- 
+  ! 5. 그룹 선택자 
+  : 같은 스타일 규칙을 사용하는 선택자를 묶어서 적용
+  >> ,(쉼표)로 구분하여 나열
+  -->
+</body>
+
+</html>

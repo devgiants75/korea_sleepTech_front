@@ -1,0 +1,45 @@
+/* 
+id 스타일 선택자
+: #(샾, 해시태그)
+*/
+#unique {
+  color: lightpink;
+}
+
+/* 
+class 스타일 선택자
+: .(마침표) 
+*/
+
+.heading2 {
+  color: lightgreen;
+}
+
+/* 
+태그(타입, 요소) 스타일 
+: 선택자를 태그명으로 지정
+*/
+
+h1 {
+  color: lightcoral;
+}
+
+h2 {
+  color: lightblue !important; 
+}
+
+/* 
+중요도와 적용 범위가 같음
+>> 작성 순서에 따라 표시
+*/
+p {
+  color: yellow;
+}
+
+p {
+  color: green;
+}
+
+p {
+  color: tomato;
+}

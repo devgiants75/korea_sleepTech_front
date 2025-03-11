@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d_m_p.html</title>
+  <style>
+    .margin {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      border: 1px solid #222;
+    }
+
+    #m1 {
+      margin: 30px;
+    }
+
+    #m2 {
+      margin: 30px 40px;
+    }
+
+    #m3 {
+      margin: 10px 30px 20px;
+    }
+
+    #m4 {
+      margin: 10px 20px 30px 40px;
+    }
+
+    #m5 {
+      margin-left: 100px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    h1 {
+      border: 1px solid #000;
+      width: 100px;
+      height: 100px;
+    }
+
+    #p1 { padding: 20px; }
+    #p2 { padding: 20px 10px; }
+    #p3 { padding: 20px 40px 10px; }
+    #p4 { padding: 10px 20px 30px 40px; }
+  </style>
+</head>
+
+<body>
+  <!--  
+    ! margin: "두 박스 모델 사이의 여백"
+      - 속성
+        : 크기, 백분율, auto
+
+      cf) 마진을 활용하여 웹 문서 정렬(중앙)
+
+    ! padding: 한 박스 모델에서 "테두리와 내용 사이의 여백"
+  -->
+  <div class="margin" id="m1"></div>
+  <div class="margin" id="m2"></div>
+  <div class="margin" id="m3"></div>
+  <div class="margin" id="m4"></div>
+  <div class="margin" id="m5"></div>
+
+  <div style="width: 300px; height: 300px; background-color: lightblue;">
+
+    <!-- 
+    가로축을 기준으로 좌우에 같은 값의 마진을 발생
+    : 중앙 정렬 효과
+    >> auto
+        : 부모 요소에서 자식 요소의 너비값을 뺀 후 양 옆의 값을 1/2씩 차지
+    -->
+    <div style="
+        background-color: lightcoral; 
+        width: 100px; 
+        height: 100px; 
+        margin: 0 auto;
+      "></div>
+  </div>
+
+  <hr />
+  <!-- 
+  # margin 중첩 현상
+  : margin 요소 배치 시 각 요소의 마진과 마진이 만나 서로 큰 값으로 상쇄
+  >> 요소의 균일성을 위함
+    : 나열되는 요소들의 시작과 끝의 마진으로 균일하게 띄어쓴 효과를 위함
+
+  cf) 좌우는 상쇄되지 X
+  -->
+  <div style="width: 200px; height: 100px; margin: 30px;">
+    <img src="../dog.jpg" alt="강아지">
+  </div>
+  <div style="width: 200px; height: 100px; margin: 30px;">
+    <img src="../dog.jpg" alt="강아지">
+  </div>
+  <div style="width: 200px; height: 100px; margin: 30px;">
+    <img src="../dog.jpg" alt="강아지">
+  </div>
+
+  <!-- 
+  ! padding 속성
+    : 콘텐츠 영역과 테두리 영역 사이의 여백 설정
+  -->
+
+  <h1 id="p1">롯데</h1>
+  <h1 id="p2">롯데</h1>
+  <h1 id="p3">롯데</h1>
+  <h1 id="p4">롯데</h1>
+</body>
+
+</html>

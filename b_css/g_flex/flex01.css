@@ -5,3 +5,10 @@
   border: 1px solid #ccc;
   width: 80%;
 }
+
+.item {
+  background-color: lightcoral;
+  padding: 20px;
+  margin: 5px;
+  border: 1px solid #000;
+}

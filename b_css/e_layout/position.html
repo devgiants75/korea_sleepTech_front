@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position.html</title>
+  <style>
+    p {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    #para1 {
+      position: static;
+    }
+
+    #para2 {
+      position: relative;
+      /* 해당 방향에서부터 속성값까지 이동 (양수/음수) */
+      left: 100px;
+      top: -50px;
+    }
+  </style>
+</head>
+<body>
+  <!--  
+    ! position 속성
+      : 요소의 위치를 결정하는 속성
+
+      ? 속성값
+        - static(정적인, '기본')
+          : 기본 웹 문서의 흐름으로 배치(기본값)
+          : HTML 문서에 작성된대로 화면에 출력
+          +) top, left, bottom, right 등 위치 조정 속성 적용 X
+
+        - relative(상대적인)
+          : static + 위치값 지정
+        - absolute
+        - fixed
+  -->
+  <p id="para1">This is a paragraph</p>
+  <p id="para2">This is a paragraph</p>
+  <p id="para3">This is a paragraph</p>
+  <p id="para4">This is a paragraph</p>
+</body>
+</html>

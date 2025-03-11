@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>display.html</title>
+  <style>
+    * {
+      /* 너비/높이값을 border(테두리)까지 지정 */
+      box-sizing: border-box;
+    }
+
+    nav ul {
+      /* 순서가 없는 리스트의 불릿 제거 */
+      list-style: none;
+    }
+
+    nav ul li {
+      /* 요소가 수평 배치 + 크기값 지정 가능(Box Model) */
+      display: inline-block;
+
+      border: 1px solid #222;
+      padding: 10px;
+      margin: 0 20px;
+    }
+
+    /* 가상 클래스 선택자: 사용자의 동작에 반응 */
+    nav ul li:hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <!--  
+    ! display(배치하다)
+      : 페이지 요소의 배치 방법
+
+      cf) 블록 레벨 요소 VS 인라인 레벨 요소
+      - 블록: 전체 너비를 차지 (수직 배치) + Box Model: 너비/높이값 지정 O
+      - 인라인: 콘텐츠의 크기만큼만을 차지(수평 배치) + 너비/높이값 지정 X
+
+      ? 속성값
+        - block: 인라인 > 블록
+        - inline: 블록 > 인라인 
+        - inline-block
+          : 인라인 요소처럼 같은 줄에 표시(수평 배치) + 너비/높이값 지정 O
+        - none
+          : 해당 요소를 화면에 표시하지 않는 속성
+  -->
+
+  <!-- display 예제: 수평 네비게이션 -->
+  <nav>
+    <ul>
+      <li>menu 1</li>
+      <li>menu 2</li>
+      <li>menu 3</li>
+      <li>menu 4</li>
+    </ul>
+  </nav>
+</body>
+</html>

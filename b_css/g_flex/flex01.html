@@ -41,8 +41,8 @@
     ? display: flex; 설정의 컨테이너는 자동으로
       기본 축이 가로 방향, 교차 축이 세로 방향 지정
 
-    ! Flex 컨테이너에 지정하는 속성
-    1) flex-direction 속성
+    & Flex 컨테이너에 지정하는 속성
+    ! 1) flex-direction 속성
       : flexbox의 기본 축이 진행되는 방향을 지정
       >> item이 배치되는 방향
 
@@ -51,6 +51,20 @@
       - column(열 - 세로)
       - row-reverse(행의 역방향 정렬)
       - column-reverse(열의 역방향 정렬)
+
+    ! 2) flex-wrap 속성
+      : flex 아이템들이 여러 줄로 래핑될 것인지를 결정
+      - 아이템이 메인 축을 기준으로 한 줄에 모두 배치되지 못할 경우, 여러 줄로 배치될 것인지 결정
+
+      ? 속성값
+      - nowrap(기본값): 모든 Flex 아이템을 주축 기준 한 줄 배치
+      - wrap: 컨테이너를 벗어나는 아이템은 여러 줄로 래핑
+      - wrap-reverse: wrap과 유사 + 아이템들의 순서가 반대로 래핑
+
+    ! flex-flow 속성
+      : flex direction + flex wrap을 하나의 단축 속성으로 지정
+
+      ? flex-flow: direction속성값 wrap속성값;
   -->
   <h1>Flexbox 강의자료</h1>
   <section>
@@ -60,6 +74,35 @@
       <div class="item">1</div>
       <div class="item">2</div>
       <div class="item">3</div>
+    </div>
+    
+    <h2>2. Flex Direction(주축/교차축 변경)</h2>
+    <div class="container example2">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+    
+    <h2>3. Flex Wrap(아이템 래핑)</h2>
+    <div class="container example3">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+    </div>
+    
+    <h2>4. Flex Flow(아이템 정렬 & 래핑)</h2>
+    <div class="container example4">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
     </div>
   </section>
 </body>

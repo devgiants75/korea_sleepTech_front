@@ -11,4 +11,44 @@
   padding: 20px;
   margin: 5px;
   border: 1px solid #000;
+  text-align: center;
+
+  /* 
+  최소 너비 지정 
+  : 너비/높이에 최소/최대 크기 지정 가능
+  min-, max-
+  */
+  min-width: 50px;
+}
+
+.example1 {
+  /* 기본 설정: 행 방향 */
+  flex-direction: row;
+}
+
+.example2 {
+  /* 
+  메인 축(열, 세로) 
+  <> 교차 축(행, 가로)
+  */
+  flex-direction: column;
+
+  /* 
+  flex-direction: row-reverse;
+  flex-direction: column-reverse; 
+  */
+}
+
+.example3 {
+  /* flex-wrap: nowrap; */
+  /* flex-wrap: wrap; */
+  flex-wrap: wrap-reverse;
+}
+
+.example4 {
+  /* 
+  flex-direction: row-reverse;
+  flex-wrap: wrap; 
+  */
+  flex-flow: row-reverse wrap;
 }

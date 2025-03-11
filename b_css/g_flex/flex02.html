@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex02.html</title>
+  <link rel="stylesheet" href="./flex02.css" />
+</head>
+<body>
+  <!--  
+    ! flex 속성(약칭)
+      : flex 아이템이 flex 컨테이너 내에서 차지하는 공간의 비율을 결정
+  -->
+  <div class="container example1">
+    <div class="item flex-1">1</div>
+    <div class="item flex-2">2</div>
+    <div class="item flex-3">3</div>
+  </div>
+  
+  <!-- 
+    ! flex 속성을 사용한 최소 크기 값 지정
+    : 지정 방식
+      ? flex: 비율 최소고정크기;
+
+      >> 최소고정크기까지 보장
+        + 남은 여백이 생길 경우 제공된 비율로 공간을 나눔
+      >> 각 아이템이 최소 고정 크기를 가질 때 까지는 1 : 1 : 1의 비율
+  -->
+  <div class="container example2">
+    <div class="item flex-1">1</div>
+    <div class="item flex-2">2</div>
+    <div class="item flex-3">3</div>
+  </div>
+</body>
+</html>

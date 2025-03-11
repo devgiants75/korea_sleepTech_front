@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-size.html</title>
+  <style>
+    #outer {
+      width: 1100px;
+      height: 50px auto;
+      background-color: lightpink;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #222;
+      margin: 20px;
+      display: inline-block;
+
+      background: url('../dog.jpg') no-repeat left top;
+    }
+
+    #bg1 {
+      /* 원래 배경 이미지 크기만큼 표시(기본값) */
+      background-size: auto;
+    }
+
+    #bg2 {
+      /* 크기값 1개: 자동 너비값 지정(높이값은 이미지 비율에 따라 자동 적용) */
+      background-size: 200px;
+    }
+
+    #bg3 {
+      /* 부모 요소의 너비 50%(높이값 자동 지정) */
+      background-size: 50%;
+    }
+
+    #bg4 {
+      background-size: 50% 50%;
+    }
+
+    #bg5 {
+      /* 
+      요소 안에 배경이미지가 모두 보이도록 지정 
+      : 너비와 높이 중 더 큰값을 일치
+      */
+      background-size: contain;
+    }
+
+    #bg6 {
+      /* 
+      배경 이미지가 요소를 모두 덮도록 지정
+      : 너비와 높이 중 더 작은값을 일치
+      */
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- ! background-size 속성: 배경 이미지 크기 조절 -->
+  <!-- div#outer>(div.box#bg1)*6 -->
+  <div id="outer">
+    <div class="box" id="bg1"></div>
+    <div class="box" id="bg2"></div>
+    <div class="box" id="bg3"></div>
+    <div class="box" id="bg4"></div>
+    <div class="box" id="bg5"></div>
+    <div class="box" id="bg6"></div>
+  </div>
+</body>
+</html>

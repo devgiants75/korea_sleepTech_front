@@ -19,19 +19,28 @@
     #content { background-clip: content-box; }
 
     #images {
-      width: 100%;
-      height: 1000px;
-      
+      width: 400px;
+      height: 400px;
     }
 
+    /* 부모의 크기보다 이미지가 작을 경우 가로/세로로 반복되면서 요소의 배경을 채움 */
     .image {
       width: 100%;
       height: 100%;
 
       background-image: url("../dog.jpg");
 
+      /* background-repeat: repeat; */
+      /* background-repeat: repeat-x; */
+      /* background-repeat: repeat-y; */
+      background-repeat: no-repeat;
+
+      background-position: 50px 50px;
+
       border: 30px dotted #ccc;
     }
+
+    
   </style>
 </head>
 <body>
@@ -48,8 +57,17 @@
 
   ! 3. background-image 속성: 웹 요소에 배경 이미지 삽입
     : url("이미지 파일 경로") 함수로 이미지 파일 경로 삽입
+  ! 4. background-repeat 속성: 배경 이미지의 반복 방법을 지정
+  ? 5. background-position 속성: 배경 이미지의 위치 조절
+    속성값: 수평 수직;
+      >> 값을 하나만 지정: 수직값은 50%(center)로 간주
+  ? 6. background-origin 속성: 적용 범위 조절
+    : content-box(기본값), padding-box, border-box
+    >> background-clip과 동일
+  ? 7. background-attachment 속성: 배경 이미지 고정
+    : scroll(기본값), fixed(스크롤 시 이미지는 고정/내용만 스크롤)
 
-
+  >> # background 축약 속성: 전체 배경 설정을 동시에 지정
   -->
 
   <div 
@@ -85,7 +103,28 @@
   <hr />
   <div id="images">
     <div class="image"></div>
-    <div class="image"></div>
+    <div class="image" style="background-attachment: fixed;"></div>
   </div>
+
+  <hr />
+
+  <div
+    style="
+      width: 500px;
+      height: 500px;
+
+      background-image: url(../dog.jpg);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+    "
+  ></div>
+  <div
+    style="
+      width: 500px;
+      height: 500px;
+
+      background: url(../dog.jpg) no-repeat center bottom;
+    "
+  ></div>
 </body>
 </html>

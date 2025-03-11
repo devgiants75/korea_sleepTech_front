@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>z_practice.html</title>
   <style>
+    #unique {
+      color: yellow;
+    }
     body p {
       color: blue;
     }
@@ -14,15 +17,14 @@
     p.special {
       color: green;
     }
-    #unique {
-      color: yellow;
-    }
     p#unique {
       color: pink;
     }
+    /* 스타일 적용범위가 '좁을수록 우선' */
     p.special#unique {
       color: orange;
     }
+    /* 해당 스타일 시트와 연결된 모든 문서의 unique id속성값 */
     #unique {
       color: purple !important;
     }
@@ -30,6 +32,7 @@
 </head>
 <body>
   <div class="wrapper">
+    <!-- 스타일 시트 규칙보다 '인라인 스타일이 우선' -->
     <p id="unique" class="special" style="color: cyan;">Test Text</p>
   </div>
 </body>

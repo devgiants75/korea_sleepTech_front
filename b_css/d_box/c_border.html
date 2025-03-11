@@ -1,11 +1,135 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>c_border.html</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+
+      display: inline-block;
+      margin: 15px;
+
+      background-color: lightblue;
+      text-align: center;
+      line-height: 100px;
+
+      /* ! border-width: 테두리 두께 지정(기본값 1px) */
+      border-width: 5px;
+
+      border-width: thin;
+      border-width: medium;
+      border-width: thick;
+    }
+
+    .boxes {
+      width: 100px;
+      height: 100px;
+
+      display: inline-block;
+      margin: 15px;
+
+      background-color: lightgreen;
+      border-style: solid;
+
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- 
+  박스모델 구조: 콘텐츠 >> 패딩(padding) >> "테두리(border)" >> 마진(margin) 
   
+  cf) 박스모델 방향
+    >> top(상) > right(오른쪽) > bottom(하) > left(왼쪽)
+  -->
+
+  <!-- ! border-style: 테두리 스타일 지정 (기본값 none) -->
+  <div class="box" style="border-style: solid;">테두리</div>
+  <div class="box" style="border-style: dotted;">테두리</div>
+  <div class="box" style="border-style: dashed;">테두리</div>
+  <div class="box" style="border-style: double;">테두리</div>
+
+  <div class="box" style="border-style: groove;">테두리</div>
+  <div class="box" style="border-style: inset;">테두리</div>
+  <div class="box" style="border-style: outset;">테두리</div>
+  <div class="box" style="border-style: ridge;">테두리</div>
+
+  <!-- 
+  ! Box Model의 스타일 적용 방향
+  : top > right > bottom > left
+
+  1) 4개의 방향 모두 같게 지정: 값 1개
+
+  2) 상하 / 좌우 각각 지정: 값 2개
+
+  3) 상 / 좌우 / 하 각각 지정: 값 3개
+
+  4) 4개의 방향 모두 다르게 지정: 값 4개
+    >> a(top), b(right), c(bottom), d(left)
+  -->
+
+  <!-- ! border-color 속성 (색상 단위 모두 사용 가능) -->
+  <div class="boxes" style="border-width: 10px; border-color: red;">테두리(두께)</div>
+  <div class="boxes" style="border-width: 10px 20px; border-color: #00ff00;">테두리(두께)</div>
+  <div class="boxes" style="border-width: 10px 2px 5px; border-color: rgb(0, 0, 255);">테두리(두께)</div>
+  <div class="boxes" style="border-width: 1px 4px 8px 16px; border-color: rgba(100, 100, 100, 0.5);">테두리(두께)</div>
+
+  <!-- 
+  !축약 속성 border 사용: 테두리 전체 스타일링을 동시 지정 
+  
+  ? +) 둥근 테두리를 만드는 border-radius 속성
+    >> radius(반지름)
+    border-radius: 크기 | 백분율;
+  -->
+  <div style="
+      border: 5px solid #333; width: 100px; height: 100px; border-radius: 5px;
+    ">
+    테두리 축약 속성
+  </div>
+  <div style="
+      border: rgba(10, 10, 10, 0.5) 5px solid ; width: 100px; height: 100px; border-radius: 20px;
+    ">
+    테두리 축약 속성
+  </div>
+  <div style="
+      border: 11px lightcoral dashed; width: 100px; height: 100px;
+    ">
+    테두리 축약 속성
+  </div>
+
+  <!-- border 테두리를 각 방향에만 지정하고자 하는 경우 -->
+  <div style="border-top: 5px solid lightgreen; width: 100px;">
+    테두리 윗 방향
+  </div>
+
+  <div style="border-left: 5px dotted lightblue; height: 100px;">
+    테두리 왼쪽 방향
+  </div>
+
+  <!-- border-radius 속성 -->
+  <img 
+    src="../dog.jpg" 
+    alt="강아지 이미지" 
+    style="width: 200px; height: 200px; border-radius: 4px;" 
+  />
+  <img 
+    src="../dog.jpg" 
+    alt="강아지 이미지" 
+    style="width: 200px; height: 200px; border-radius: 16px;" 
+  />
+
+  <!-- 사이트 내에 프로필 이미지 삽입 시 테두리를 50% 설정으로 원모양 표시 -->
+  <img 
+    src="../dog.jpg" 
+    alt="강아지 이미지" 
+    style="width: 200px; height: 200px; border-radius: 50%;" 
+  />
 </body>
+
 </html>

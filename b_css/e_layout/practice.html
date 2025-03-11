@@ -20,7 +20,38 @@
 
     p {
       line-height: 20px;
-      font-size: 0.8em;
+      font-size: 0.75em;
+    }
+
+    article {
+      width: 350px;
+      height: 200px;
+
+      margin: 10px;
+      padding: 10px;
+
+      border: 1px solid #ccc;
+      float: left;
+    }
+
+    /* 
+    자손 선택자 (공백)
+      : 해당 요소 내부의 모든 자손 
+    자식 선택자 ( > )
+      : 직접적인 자식 요소만
+    */
+    footer > p {
+      clear: left;
+
+      width: 100%;
+      height: 50px;
+
+      background-color: #222;
+      color: white;
+
+      text-align: center;
+      line-height: 50px;
+      font-size: 0.9em;
     }
   </style>
 </head>

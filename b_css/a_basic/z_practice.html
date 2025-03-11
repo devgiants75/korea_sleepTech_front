@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z_practice.html</title>
+  <style>
+    body p {
+      color: blue;
+    }
+    .wrapper p {
+      color: red;
+    }
+    p.special {
+      color: green;
+    }
+    #unique {
+      color: yellow;
+    }
+    p#unique {
+      color: pink;
+    }
+    p.special#unique {
+      color: orange;
+    }
+    #unique {
+      color: purple !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <p id="unique" class="special" style="color: cyan;">Test Text</p>
+  </div>
+</body>
+</html>

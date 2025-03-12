@@ -20,6 +20,16 @@ div {
   align-items: flex-start;
   align-items: flex-end;
   align-items: baseline;
+
+  /* justify-content */
+  justify-content: flex-start;
+  justify-content: flex-end;
+  justify-content: center;
+
+  /* 1과 6의 배치가 start/end에 딱 붙음 */
+  justify-content: space-between;
+
+  justify-content: space-around;
 }
 
 button {
@@ -27,3 +37,30 @@ button {
   line-height: 1.5;
 }
 
+#one {
+  align-self: stretch;
+  order: 5;
+}
+
+#two {
+  align-self: flex-start;
+  /* order: 0; */
+}
+
+#three {
+  align-self: flex-end;
+  order: 2;
+}
+
+#four {
+  align-self: center;
+  order: 1;
+}
+
+#five {
+  order: 1;
+}
+
+#six {
+  order: -1;
+}

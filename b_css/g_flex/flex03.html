@@ -13,7 +13,7 @@
     - flex 아이템
   
   # 1) align-items
-    : '아이템'들이 '교차축(주축의 90도 방향)'에서의 배치를 결정
+    : '아이템들'이 '교차축(주축의 90도 방향)'에서의 배치를 결정
 
     ? 속성값
     - stretch(기본값)
@@ -22,6 +22,27 @@
     - flex-start
     - flex-end
     - baseline: 텍스트 기준 정렬
+
+  # 2) align-self
+    :'특정 아이템'이 '교차축'에서의 배치를 결정
+
+    ? 속성값: align-items와 동일
+
+  # 3) justify-content
+    : '아이템들'이 '주축(기본 가로방향)'에서의 배치를 결정
+
+    ? 속성값
+      - flex-start
+      - flex-end
+      - center
+      - space-between
+      - space-around
+
+  # 4) order (순서)
+    : '아이템' 순서 지정 (기본값 0)
+    - order 값이 클수록 후위 배치
+    - 순위값이 동등할 경우 소스 코드 순서
+    - 음수값 지정 가능
   -->
     <!-- div>(button#one)*6 -->
     <div>

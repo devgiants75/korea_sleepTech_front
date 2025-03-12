@@ -43,3 +43,43 @@
 .example2 .flex-3 {
   flex: 1 200px;
 }
+
+/* 
+! flex 속성 
+: grow + shrink + basis
+*/
+
+/* 
+? grow 속성: 늘어나는 비율 지정 
+*/
+.example3 .grow-1 {
+  /* "나머지 item에 속성 지정을 하지 않을 경우" 남은 공간을 모두 차지 */
+  flex-grow: 1;
+}
+
+.example3 .grow-2 {
+  flex-grow: 2;
+}
+
+.example3 .grow-3 {
+  flex-grow: 3;
+}
+
+/* 
+? shrink 속성
+: 줄어드는 속도를 지정
+
+? basis: 아이템의 기본 크기
+*/
+.example5 .basis-1 {
+  flex-basis: 100px;
+  flex-shrink: 3;
+}
+.example5 .basis-2 {
+  flex-basis: 200px;
+  flex-shrink: 3;
+}
+.example5 .basis-3 {
+  flex-basis:300px;
+  flex-shrink: 1;
+}

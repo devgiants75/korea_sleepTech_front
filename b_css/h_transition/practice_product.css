@@ -1,0 +1,76 @@
+#container {
+  width: 1000px;
+  margin: 20px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.dog-list {
+  list-style: none;
+  padding: 0;
+}
+
+.dog-list li {
+  float: left;
+  padding: 0;
+  margin: 10px;
+  overflow: hidden;
+
+  /* 
+  li의 하위요소인 .caption에서 absolute 지정을 위함 
+  */
+  position: relative;
+}
+
+.dog-list img {
+  width: 300px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+
+  /* 
+  요소의 쌓임 순서를 결정
+  : 정수값을 사용
+    , 해당 값에 따라 겹치는 순서가 결정
+  : 요소값이 겹치는 경우 다른 요소보다 상위 층에 위치하도록 지정
+
+  - position: static이 아닌 경우에만 사용 가능
+  */
+  z-index: 5;
+}
+
+.dog-list .caption {
+  position: absolute;
+  /* 
+  요소의 쌓임 순서를 결정
+  : 이미지(z-index: 5;)보다 더 높은 값을 설정하여
+    , 요소가 보여질 경우(translateY(-200px)) 이미지 위에 표시되도록 설정
+  */
+  z-index: 10;
+
+  top: 200px;
+  width: 300px;
+  height: 200px;
+  padding-top: 20px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+
+  transition: all 0.6s ease-in-out;
+}
+
+.dog-list li:hover .caption {
+  /* 요소위에 마우스를 올리면 설명글(.caption)이 보여지도록 설정 */
+  opacity: 1;
+
+  /* tranform 변형: translateY(Y축을 기준으로 요소를 이동) */
+  transform: translateY(-200px);
+}
+
+.caption p, .caption h2 {
+  color: #fff;
+  text-align: center;
+}

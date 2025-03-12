@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition.html</title>
+  <style>
+    #container {
+      width: 150px;
+      height: 150px;
+      background-color: lightblue;
+      text-align: center;
+      line-height: 150px;
+      font-size: 16px;
+
+      transition-property: background-color;
+      /* 5초 동안 배경색이 변경 */
+      transition-duration: 5s;
+      transition-timing-function: ease-in-out;
+
+      /* 트랜지션 효과 시작의 대기 시간 */
+      transition-delay: 3s;
+
+      /* 효과속성, 지속시간, 기능, 지연시간 */
+      transition: background-color 5s ease-in-out 3s;
+
+      /* transition: all 0.3s ease-in-out; */
+    }
+
+    #container:hover {
+      background-color: lightcoral;
+      font-size: 20px;
+      border-radius: 50%;
+    }
+
+    /* 예시2 */
+    .box {
+      display: flex;
+    }
+
+    .inner {
+      width: 100px;
+      height: 100px;
+      background-color: lightgreen;
+
+      /* 
+      === opacity(투명도 설정) ===
+      : 속성값 0 ~ 1까지의 값을 지정
+      - 숫자가 커질수록 불투명, 작아질수록 투명
+      - 0은 요소가 보이지 X
+      */
+      opacity: 1;
+
+      transition: width 2s ease-in-out,
+                  background-color 1.5s ease-in-out,
+                  opacity 1s ease-in-out,
+                  height 0.5s ease-in-out;
+    }
+
+    .inner:hover {
+      width: 200px;
+      height: 150px;
+      background-color: lightpink;
+      opacity: 0.5;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 
+    ! transition
+
+    1) transition-property
+      : 트랜지션을 적용할 css 속성을 지정
+      - all: 모든 변화 속성에 지정
+      - ,(콤마)를 기준으로 여러 개 나열도 가능
+
+    2) transition-duration
+      : 트랜지션 지속시간
+
+      cf) 1초 == 1000밀리초
+
+    3) transition-timing-function
+      : 트랜지션 효과의 속도 곡선
+      
+      : 속성값
+        - linear: 시작부터 끝까지 동일한 속도
+
+        - ease(기본값): 시작, 끝은 느리게 / 중간은 빠르게
+
+        - ease-in: 시작부터 끝까지 점차 가속
+        - ease-out: 시작부터 끝까지 점차 감속
+        - ease-in-out: 시작, 끝은 느리게 / 중간은 빠르게
+  -->
+  <div id="container">블럭</div>
+
+  <hr />
+
+  <div class="box">
+    <div class="inner"></div>
+  </div>
+</body>
+</html>

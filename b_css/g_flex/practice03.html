@@ -10,20 +10,29 @@
       border: 1px solid black;
       width: 500px;
       height: 400px;
-
+      
+      display: flex;
+      flex-direction: column;
     }
 
     .row {
-
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 5px 0;
     }
 
     .box {
       border: 1px solid black;
-
+      /* 전체 너비에서 패딩, 마진을 제외한 모든 공간을 1의 비율로 나눠가짐 */
+      flex: 1;
+      margin: 5px;
+      height: 100px;
     }
 
     .box.large {
-
+      /* 다른 요소들보다 2배의 공간을 차지 */
+      flex: 2;
     }
   </style>
 </head>

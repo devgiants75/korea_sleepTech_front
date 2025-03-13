@@ -133,5 +133,31 @@ console.log(`학점은 ${grade}입니다.`); // 학점은 F입니다.
 
 console.log('=== if else문 ===');
 
+score = 81;
+
+if (score < 0 || score > 100) {
+  console.log('유효한 점수가 아닙니다.');
+} else if (score >= 90) {
+  console.log('A');
+} else if (score >= 80) {
+  console.log('B');
+} else if (score >= 70) {
+  console.log('C');
+} else if (score >= 60) {
+  console.log('D');
+} else {
+  console.log('F');
+};
 
 console.log('=== 삼항 연산자 ===');
+
+score = 91;
+
+grade =
+  score > 100 || score < 0
+  ? '유효한 점수가 아닙니다.' : score >= 90
+  ? 'A' : score >= 80
+  ? 'B' : score >= 70
+  ? 'C' : score >= 60
+  ? 'D' : 'F';
+  

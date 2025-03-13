@@ -16,7 +16,7 @@
 // : true가 하나라도! 있을 경우 무조건! true
 
 // true || true: true
-// false || false || true || false || false: false
+// false || false || true || false || false: true
 
 // 3) NOT 연산자(!) - 부정논리
 // : boolean 자료형의 데이터값 전환(!변수명)

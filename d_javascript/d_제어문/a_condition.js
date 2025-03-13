@@ -148,6 +148,7 @@ if (score < 0 || score > 100) {
 } else {
   console.log('F');
 };
+console.log(`학점은 ${grade}입니다.`);
 
 console.log('=== 삼항 연산자 ===');
 
@@ -160,4 +161,5 @@ grade =
   ? 'B' : score >= 70
   ? 'C' : score >= 60
   ? 'D' : 'F';
-  
+
+  console.log(`학점은 ${grade}입니다.`);

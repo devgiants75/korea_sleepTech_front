@@ -181,8 +181,11 @@ console.log(0 === false); // false
 
 // 2) 논리 자료형에 변수명(식별자) 사용 시 일치/불일치 생략 가능
 let isTrue = true;
-if (isTrue === true) console.log('isTrue는 참이다.');
-if (isTrue) console.log('isTrue는 참이다.');
+if (isTrue === true) console.log('isTrue는 참이다.'); // (X)
+if (isTrue) console.log('isTrue는 참이다.'); // (O)
 
-if (isTrue !== true) console.log('isTrue는 참이 아니다.');
-if (!isTrue) console.log('isTrue는 참이 아니다.');
+if (isTrue !== true) console.log('isTrue는 참이 아니다.'); // (X)
+if (!isTrue) console.log('isTrue는 참이 아니다.'); // (O)
+
+let str = '';
+if (str) console.log('빈 문자열입니다.');

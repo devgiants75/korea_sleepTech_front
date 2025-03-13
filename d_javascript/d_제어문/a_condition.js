@@ -163,3 +163,26 @@ grade =
   ? 'D' : 'F';
 
   console.log(`학점은 ${grade}입니다.`);
+
+// ======================= //
+true ? console.log('출력A') : console.log('출력B');
+false ? console.log('출력B') : console.log('출력A');
+console.log('---');
+true || console.log('출력A');
+console.log('---');
+true && console.log('출력A');
+// ======================= //
+
+// cf) 조건문 'Best Practice'
+// 1) 비교 연산자 사용 시 '==' 대신 '===' 사용 권장
+
+console.log(0 == false); // true
+console.log(0 === false); // false
+
+// 2) 논리 자료형에 변수명(식별자) 사용 시 일치/불일치 생략 가능
+let isTrue = true;
+if (isTrue === true) console.log('isTrue는 참이다.');
+if (isTrue) console.log('isTrue는 참이다.');
+
+if (isTrue !== true) console.log('isTrue는 참이 아니다.');
+if (!isTrue) console.log('isTrue는 참이 아니다.');

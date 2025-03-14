@@ -73,3 +73,65 @@ fruits = ['Apple', 'Banana'];
 //          shift(): 제일 첫 번째 요소 제거 + 반환
 //          unshift(): 제일 첫 번쩨에 하나 이상의 요소를 추가 (+ 수정된 배열 길이를 반환)
 // +) splice(): 추가 & 삭제
+
+let newLength = fruits.push('Cherry');
+console.log(newLength); // 3
+
+let lastFruit = fruits.pop();
+console.log(lastFruit); // Cherry
+
+let firstFruit = fruits.shift();
+console.log(firstFruit); // Apple
+
+newLength = fruits.unshift('mango', 'orange'); // 시작 부분에 하나 이상의 요소를 추가 (,로 나열)
+console.log(newLength); // unshift: 수정된 배열의 길이를 반환 // 3
+
+//? cf) 추가: 추가 후의 배열 길이를 반환 
+//      삭제: 삭제한 요소를 반환
+
+// splice()
+// 1) 추가: splice(시작 인덱스, 0, 아이템 나열)
+// cf) splice(시작인덱스, 삭제할 요소의 개수, ...전체 아이템)
+
+console.log(fruits); // [ 'mango', 'orange', 'Banana' ]
+fruits.splice(1, 0, 'strawberry', 'coconut');
+console.log(fruits); // [ 'mango', 'strawberry', 'coconut', 'orange', 'Banana' ]
+
+// 2) 삭제: splice(시작 인덱스, 삭제할 요소의 개수)
+let removedFruits = fruits.splice(1, 2);
+console.log(removedFruits); // [ 'strawberry', 'coconut' ]
+
+//? 요소 정렬
+// sort(): 오름차순 정렬
+// reverse(): 내림차순 정렬
+console.log(fruits.sort()); // [ 'Banana', 'mango', 'orange' ]
+console.log(fruits.reverse()); // [ 'orange', 'mango', 'Banana' ]
+
+//? === 배열 변환 ===
+let fruitValues = ['사과', '바나나', '망고'];
+
+// 1) join('구분자'): 배열의 모든 요소를 연결하여 하나의 문자열로 변환
+// >> 구분자 전달하지 않을 경우 ,가 기본값
+console.log(fruitValues.join()); // 사과,바나나,망고
+console.log(fruitValues.join(' ')); // 사과 바나나 망고
+console.log(fruitValues.join('-')); // 사과-바나나-망고
+console.log(fruitValues.join(', ')); // 사과, 바나나, 망고
+
+// 2) split(): 문자열을 특정 구분자를 기준으로 분리하여 하나의 배열로 변환
+let str1 = '사과,바나나,망고';
+let str2 = '사과 바나나 망고';
+let str3 = '사과-바나나-망고';
+
+console.log(str1.split(','));
+console.log(str2.split(' '));
+console.log(str3.split('-')); // [ '사과', '바나나', '망고' ]
+
+//! 다차원 배열
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+console.log(matrix[0]); // [ 1, 2, 3 ]
+console.log(matrix[0][0]); // 1

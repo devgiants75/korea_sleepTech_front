@@ -37,3 +37,32 @@ console.log(sum); // 10
 console.log(sum2); // 110
 
 // == reduce 예시 == //
+let cars = ['audi', 'bmw', 'hyundai', 'kia'];
+
+let combinedCar = cars.reduce((acc, car) => {
+  return acc + car + ", ";
+}, "Cars: ");
+
+console.log(combinedCar); // Cars: audi, bmw, hyundai, kia,
+console.log(typeof combinedCar); // string
+
+// cf) 기타 배열의 고급 메서드
+let numberArray = [3, 1, 5, 2, 7, 6];
+
+// 1) sort(), reverse(): 정렬 메서드
+console.log(numberArray.sort()); // [ 1, 2, 3, 5, 6, 7 ]
+console.log(numberArray.reverse()); // [ 7, 6, 5, 3, 2, 1 ]
+
+// 2) indexOf(), lastIndexOf(): 특정 요소의 인덱스를 찾는 메서드
+
+// 3) find(), findIndex()
+// find(): 특정 조건을 만족하는 첫 번째 요소 반환
+// findIndex(): 특정 조건을 만족하는 첫 번째 요소의 인덱스 반환
+
+let nums = [5, 4, 6, 1, 7, 2];
+
+let firstOverFive = nums.find(num => num > 5);
+let firstOverFiveIndex = nums.findIndex(num => num > 5);
+
+console.log(firstOverFive); // 6
+console.log(firstOverFiveIndex); // 2

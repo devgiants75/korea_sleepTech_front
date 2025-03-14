@@ -72,3 +72,5 @@ function findMax(array) {
 
   return max;
 }
+
+console.log(findMax([10, 11, 21, 3, 2])); // 21

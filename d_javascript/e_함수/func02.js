@@ -61,3 +61,22 @@ console.log(introduce('이도경', 30)); // undefined
 // - 파라미터로 x를 지정
 // - 반환값으로 x의 제곱을 지정
 // - 함수 선언 방식 3가지 모두 사용 (square1, 2, 3)
+
+//? 1) 함수 선언문
+function square1(x) {
+  return x * x;
+}
+
+console.log(square1(2)); // 4
+
+//? 2) 함수 표현식
+let square2 = function(x) {
+  return x * x;
+}
+
+console.log(square2(5)); // 25
+
+//? 3) 화살표 함수
+let square3 = x => x * x; // 중괄호 생략 시 return 키워드도 같이 생략
+
+console.log(square3(9)); // 81

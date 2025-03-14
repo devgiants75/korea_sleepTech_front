@@ -102,3 +102,66 @@ greet2(); // 안녕하세요! (함수 표현식)
 //  >> '호이스팅' 적용 X
 // +) 항상 익명함수로 작성
 //    'this'가 일반함수와 다르게 바인딩 됨 
+
+/*
+let 변수명 = (매개변수-parameter) => {
+  - 함수 기능 작성
+  - return 반환값;
+}
+*/
+
+// greet3();
+console.log('== 함수 선언 이전 ==');
+
+let greet3 = () => {
+  console.log('안녕하세요! (화살표함수)');
+}
+
+greet3(); // 안녕하세요! (화살표함수)
+
+// cf) 화살표 함수는 매개변수가 1개 인 경우 소괄호를 
+//    , 함수 본문(구현부)이 단일문인 경우 중괄호+return 키워드 생략 가능
+
+const greet4 = name => console.log(`안녕하세요. ${name}님`);
+
+//! 5. 함수의 인자(argument)
+// : 함수 사용을 위해 파라미터로 전달되는 값
+// - parameter: 변수 선언
+// - argument: 변수 할당
+
+greet4('이승아'); // 안녕하세요. 이승아님
+
+//! 6. 함수 호출 방법
+// 함수 생성(함수 선언) <> 함수 사용(함수 호출)
+// : 함수명(인자값-선택);
+
+//! 7. 함수의 스코프(범위, scope)
+
+// 1) 지역변수(local)
+//    : 중괄호 내의 영역(함수 내부)
+
+// 2) 전역변수(global)
+//    : 해당 파일(모듈) 내의 영역
+//    - 해당 파일 내부에서 어디서든지 접근 가능
+
+let username = '이승아';
+
+function lsa() {
+  // 지역변수: 함수 내의 변수(+ 매개변수)
+  let job = 'developer';
+
+  console.log(`${username}'s job is ${job}`);
+}
+
+lsa(); // 이승아's job is developer
+
+console.log(username); // 이승아
+// console.log(job); - Error(지역 변수는 해당 스코프를 벗어나면 사용 불가)
+
+/*
+  함수 선언 방식에 따른 Best Practice
+
+  - 일반적 상황: 함수 선언문 (function + 함수명O)
+  - 조건부 함수 사용: 함수 표현식 (function + 함수명 선택)
+  - 콜백 함수 사용: 화살표 함수(=> + 함수명X)
+*/

@@ -79,3 +79,41 @@ const evenNumbers2 = basicArray.filter(function (value) {
 
 console.log(`원래 배열 ${basicArray}`); // 원래 배열 0,1,2,3,4,5
 console.log(`짝수 배열 ${evenNumbers}`); // 짝수 배열 0,2,4
+
+//! === 배열을 활용한 콜백 함수 예제 === //
+let cars = ['audi', 'bmw', 'volvo', 'hyundai'];
+
+// 콜백함수의 매개변수명 지정
+// : 의미론적 변수명 지정을 권장!!
+cars.forEach(car => console.log(car));
+
+// 전체 배열의 요소를 대문자(영문자)로 변환 
+// : 문자열.toUpperCase();
+let carsUpperCase = cars.map(function (car) {
+  return car.toUpperCase();
+});
+
+console.log(carsUpperCase); // [ 'AUDI', 'BMW', 'VOLVO', 'HYUNDAI' ]
+
+// 전체 배열 요소 중 문자열 길이가 4보다 큰 요소만 반환
+// : 문자열.length
+let longNameCars = cars.filter(car => car.length > 4);
+console.log(longNameCars); // [ 'volvo', 'hyundai' ]
+
+//? cf) 메서드 체이닝
+// : 메서드를 연속적으로 호출하는 프로그래밍 패턴
+// > 어떤 메서드(기능)이 반환하는 값을 기반으로 또 다른 메서드를 줄줄이 사용하는 것
+
+let numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// numbersArray의 값에서 '짝수만 선택', '해당 값들을 제곱', '콘솔에 출력'
+// >> 'filter', 'map', 'forEach'
+
+let a = numbersArray.filter(value => value % 2 === 0);
+let b = a.map(value => value * value);
+b.forEach(value => console.log(value));
+
+numbersArray
+  .filter(value => value % 2 === 0)
+  .map(value => value * value)
+  .forEach(value => console.log(value));

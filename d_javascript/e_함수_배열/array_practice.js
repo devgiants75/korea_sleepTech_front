@@ -36,3 +36,12 @@ function filterTen(array) {
 
 console.log(filterTen([3, 15, 31, 2, 6, 11, 87, 35])); // [ 15, 31, 11, 87, 35 ]
 console.log(filterTen([12, 3, 54, 7, 21, 10, 11, 9])); // [ 12, 54, 21, 10, 11 ]
+
+//! 3. 배열의 평균 구하기
+// - findAverage(array)
+// : 평균 == 전체 요소의 합 / 요소의 개수
+
+//! 4. 최대값 찾기
+// - findMax(array)
+// : 배열의 첫 번째 요소를 max라는 변수에 담기
+// : 배열을 순회하면서 max보다 큰 값이 있을 경우 max를 해당 값으로 재할당

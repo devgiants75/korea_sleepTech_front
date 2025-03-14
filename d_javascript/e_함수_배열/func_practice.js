@@ -19,3 +19,22 @@
 // 직원 A 급여: $계산된 금액
 // 직원 B 급여: $계산된 금액
 // 직원 C 급여: $계산된 금액
+
+function calculatePay(hours, rate) {
+  // 월 급여: 근무 시간(hours) * 시급(rate)
+
+  if (hours > 160) {
+    const regularPay = 160 * rate;
+
+    // 160 시간 초과 근무 시간의 급여
+    const overtimePay = (hours - 160) * (rate * 1.5);
+
+    return regularPay + overtimePay;
+  } else {
+    return hours * rate;
+  }
+}
+
+console.log(calculatePay(172, 20)); // 3560
+console.log(calculatePay(152, 30)); // 4560
+console.log(calculatePay(102, 18)); // 1836

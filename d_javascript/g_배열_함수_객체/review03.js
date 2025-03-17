@@ -156,12 +156,34 @@ class Library {
 
   //# == 추가 기능 구현 == //
   // [필터링] 저자별 도서 필터링
+  filterBooksByAuthor(author) {
+    // 일치하는 저자를 필터링
+    //? 전체 목록을 순회 + 각 데이터의 author 값과 매개변수의 author값이 일치(===)하는 경우 새로운 배열로 반환
+    // >> 해당 배열 전체 출력 (forEach)
+
+    // cf) 검색 값은 대소문자 구별 X: toLowerCase()로 두 값의 형태를 일치시킬 것
+  }
 
   // [필터링] 제목 키워드로 도서 필터링
+  filterBooksByTitle(keyword) {
+    // 포함되는 제목을 필터링
+    //? 전체 목록을 순회 + 각 데이터의 title 값에 매개변수의 title값이 포함(includes)된 경우 새로운 배열로 반환
+    // >> 해당 배열 전체 출력 (forEach)
+
+    // cf) 검색 값은 대소문자 구별 X: toLowerCase()로 두 값의 형태를 일치시킬 것
+  }
 
   // [필터링] 대여 가능 여부로 도서 필터링
+  filterBooksByAvailable(isAvailable) {
+    //? isAvailable 값에 따라 true 면 출력 시 ${대여 가능}인 책 목록
+    // false라면 출력 시 ${대여 중}인 책 목록
+    const status = isAvailable ? '대여 가능' : '대여 중'
+  }
 
   // [추가 기능] 대여 가능 도서 수 집계
+  countAvailableBooks() {
+    //? isAvailable이 true인 데이터만 뽑아 해당 배열의 길이를 측정
+  }
 }
 
 //! === 프로젝트 실행 ===
@@ -186,3 +208,11 @@ busanLibrary.updateBook(2, '자바 공부는 어려워', null);
 busanLibrary.updateBook(2, null, '이도갱이');
 busanLibrary.removeBook(3);
 busanLibrary.displayBooks();
+
+// == 양산 도서관 ==
+const yangsanLibrary = new Library();
+yangsanLibrary.addBook('정보처리기사 정복하기', '이승아');
+yangsanLibrary.addBook('컴퓨터활용능력 정복하기', '이도경');
+yangsanLibrary.addBook('빅데이터분석기사 정복하기', '이승아');
+
+yangsanLibrary.displayBooks();

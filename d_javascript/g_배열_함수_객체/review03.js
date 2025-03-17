@@ -239,3 +239,27 @@ yangsanLibrary.addBook('컴퓨터활용능력 정복하기', '이도경');
 yangsanLibrary.addBook('빅데이터분석기사 정복하기', '이승아');
 
 yangsanLibrary.displayBooks();
+
+busanLibrary.filterBooksByAuthor('이승아');
+// === 이승아의 책 목록 ===
+// 1: SQLD 공부는 재밌어 - 대여 가능
+// 5: 스프링 공부는 재밌어 - 대여 가능
+
+busanLibrary.filterBooksByTitle('재밌어');
+// === 제목에 재밌어가 포함된 책 목록 ===
+// 1: SQLD 공부는 재밌어 - 대여 가능
+// 4: 리액트 공부는 재밌어 - 대여 가능
+// 5: 스프링 공부는 재밌어 - 대여 가능
+
+busanLibrary.rentBook(1);
+busanLibrary.rentBook(4);
+busanLibrary.filterBooksByAvailable(true);
+// === 대여 가능인 책 목록 ===
+// 2: 자바 공부는 어려워 by 이도갱이
+// 5: 스프링 공부는 재밌어 by 이승아
+busanLibrary.filterBooksByAvailable(false);
+// === 대여 중인 책 목록 ===
+// 1: SQLD 공부는 재밌어 by 이승아
+// 4: 리액트 공부는 재밌어 by 이지훈
+
+busanLibrary.countAvailableBooks(); // 총 2권의 책이 대여 가능합니다.

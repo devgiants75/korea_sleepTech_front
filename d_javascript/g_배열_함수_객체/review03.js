@@ -162,6 +162,13 @@ class Library {
     // >> 해당 배열 전체 출력 (forEach)
 
     // cf) 검색 값은 대소문자 구별 X: toLowerCase()로 두 값의 형태를 일치시킬 것
+
+    const filtered = this.books.filter(book => book.author.toLowerCase() === author.toLowerCase());
+    console.log(`=== ${author}의 책 목록 ===`);
+    filtered.forEach(book => {
+      console.log(`${book.id}: ${book.title} - ${book.isAvailable ? '대여 가능' : '대여 중'}`);
+    });
+    return filtered;
   }
 
   // [필터링] 제목 키워드로 도서 필터링
@@ -171,18 +178,34 @@ class Library {
     // >> 해당 배열 전체 출력 (forEach)
 
     // cf) 검색 값은 대소문자 구별 X: toLowerCase()로 두 값의 형태를 일치시킬 것
+    const filtered = this.books.filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()));
+    console.log(`=== 제목에 ${keyword}가 포함된 책 목록 ===`);
+    filtered.forEach(book => {
+      console.log(`${book.id}: ${book.title} - ${book.isAvailable ? '대여 가능' : '대여 중'}`);
+    });
+    return filtered;
   }
 
   // [필터링] 대여 가능 여부로 도서 필터링
   filterBooksByAvailable(isAvailable) {
     //? isAvailable 값에 따라 true 면 출력 시 ${대여 가능}인 책 목록
     // false라면 출력 시 ${대여 중}인 책 목록
-    const status = isAvailable ? '대여 가능' : '대여 중'
+    const status = isAvailable ? '대여 가능' : '대여 중';
+    const filtered = this.books.filter(book => book.isAvailable === isAvailable);
+    console.log(`=== ${status}인 책 목록 ===`);
+    filtered.forEach(book => {
+      console.log(`${book.id}: ${book.title} by ${book.author}`);
+    });
+    return filtered;
   }
 
   // [추가 기능] 대여 가능 도서 수 집계
   countAvailableBooks() {
     //? isAvailable이 true인 데이터만 뽑아 해당 배열의 길이를 측정
+    // const count = this.books.filter(book => book.isAvailable === true)
+    const count = this.books.filter(book => book.isAvailable).length;
+    console.log(`총 ${count}권의 책이 대여 가능합니다.`);
+    return count;
   }
 }
 

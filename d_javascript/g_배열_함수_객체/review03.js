@@ -124,7 +124,10 @@ class Library {
       return; // 메서드 종료
     }
 
-    if (!newTitle.trim() && !newAuthor.trim()) { // 두 가지의 값이 모두 제공되지 않은 경우
+    const isNewTitleValid = newTitle && newTitle.trim().length > 0;
+    const isNewAuthorValid = newAuthor && newAuthor.trim().length > 0;
+
+    if (!isNewTitleValid && !isNewAuthorValid) { // 두 가지의 값이 모두 제공되지 않은 경우
       console.log('제목 또는 저자 중 하나는 반드시 수정되어야 합니다.');
       console.log('현재는 수정된 값이 없습니다.');
       return;
@@ -150,6 +153,15 @@ class Library {
       console.log('해당 책을 찾을 수 없습니다.');
     }
   }
+
+  //# == 추가 기능 구현 == //
+  // [필터링] 저자별 도서 필터링
+
+  // [필터링] 제목 키워드로 도서 필터링
+
+  // [필터링] 대여 가능 여부로 도서 필터링
+
+  // [추가 기능] 대여 가능 도서 수 집계
 }
 
 //! === 프로젝트 실행 ===
@@ -171,5 +183,6 @@ busanLibrary.returnBook(1);
 busanLibrary.displayBooks();
 
 busanLibrary.updateBook(2, '자바 공부는 어려워', null);
+busanLibrary.updateBook(2, null, '이도갱이');
 busanLibrary.removeBook(3);
 busanLibrary.displayBooks();

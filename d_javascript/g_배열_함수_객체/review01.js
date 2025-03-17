@@ -93,6 +93,9 @@ function displayTodos() {
   console.log('=== 현재의 할 일 목록 ===');
   todos.forEach(todo => {
     console.log(`${todo.id}: ${todo.content} - ${todo.completed ? '완료됨' : '완료되지 않음'}`);
+    // 논리 연산자
+    // : 완료 시 ^^ 기호를 출력
+    // console.log(`${todo.id}: ${todo.content} - ${todo.completed && '^^'}`);
   });
 }
 

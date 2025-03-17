@@ -132,7 +132,7 @@ class Library {
 
     book.title = newTitle || book.title;
     book.author = newAuthor || book.author;
-    console.log(`책 (id: ${id}) 정보가 업데이트되었습니다: 제목 - ${book.title}, 저자 - ${book.author}`);
+    console.log(`책 (id: ${id}) 정보가 업데이트되었습니다 : 제목 - ${book.title}, 저자 - ${book.author}`);
   }
 
   //? 특정 id의 책 정보 삭제

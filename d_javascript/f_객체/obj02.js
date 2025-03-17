@@ -67,3 +67,63 @@ const PI = 3.14;
 function add(a, b) {
   return a + b;
 }
+
+// - Node.js에서는 global(전역) 객체
+// - 브라우저 환경에서는 window 객체
+
+//? 함수 컨텍스트: 함수 내부의 this
+
+// 1) 일반 함수의 this
+// : 전역 객체를 의미 (전역 컨텍스트와 동일)
+function showThis() {
+  console.log(this);
+}
+
+showThis(); // <ref *1> Object [global]
+
+// 2) 객체의 메서드 안의 this
+// : 객체의 변수에 할당되는 함수
+// - 메서드 호출 시 this는 해당 메서드를 호출한 객체에 바인딩(bind: 묶다, 고정하다)
+
+const myObject = {
+  name: 'object',
+  showThis: function() {
+    console.log(this);
+  }
+}
+
+myObject.showThis(); 
+// { name: 'object', showThis: [Function: showThis] }
+// >> myObject 즉, 메서드를 호출한 객체 그 자체가 출력
+
+// 3) 생성자 함수와 this
+
+// cf) 리터럴 객체 사용 시: this값 고정
+//    VS 생성자 함수 사용 시: this값은 현재의 객체에 바인딩 (어떤 객체를 호출하느냐에 따라 달라짐)
+
+function Person(name) {
+  // this.name: 객체의 변수
+  // name(우항): 매개변수로 전달받는 실제 데이터값
+  this.name = name;
+}
+
+const person1 = new Person('이승아'); // this.name = '이승아'
+const person2 = new Person('이도경'); // this.name = '이도경'
+
+console.log(person1.name); 
+console.log(person2.name); 
+
+// 4) 화살표 함수와 this
+const arrowObject = {
+  name: 'object',
+  showThis: () => {
+    // '화살표 함수가 정의된 객체'의 생성 스코프를 this가 가져옴
+    console.log(this);
+  }
+}
+
+arrowObject.showThis(); // {}: global 전역 객체
+
+//! 객체 내부의 this
+// - 선언적 함수, 함수 표현식 VS 화살표 함수의 this 바인딩이 다름
+// >> 현재의 객체값을 활용하기 위함이기 때문에 선언적 함수, 함수 표현식 사용 권장

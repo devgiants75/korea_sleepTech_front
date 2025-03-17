@@ -169,3 +169,7 @@ busanLibrary.rentBook(1);
 
 busanLibrary.returnBook(1);
 busanLibrary.displayBooks();
+
+busanLibrary.updateBook(2, '자바 공부는 어려워', null);
+busanLibrary.removeBook(3);
+busanLibrary.displayBooks();

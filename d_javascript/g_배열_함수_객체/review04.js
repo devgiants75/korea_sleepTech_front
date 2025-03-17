@@ -27,3 +27,12 @@
 
   cf) threshold: 한계점
 */
+
+// === 프로그램 실행 예제 ===
+const gradeSystem = new GradeManagement();
+
+// 학생 추가 예제
+gradeSystem.addStudent("이승아", { Math: 85, English: 92, Science: 78 });
+gradeSystem.addStudent("이지희", { Math: 95, English: 88, Science: 93 });
+gradeSystem.addStudent("이도경", { Math: 65, English: 70, Science: 72 });
+gradeSystem.addStudent("이지훈", { Math: 78, English: 82, Science: 80 });

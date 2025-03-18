@@ -1,0 +1,65 @@
+body {
+  background-color: #f0f4f8;
+  display: flex; 
+  /* 기본축: y축 */
+  flex-direction: column;
+  /* == 기본축 == */
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+#todo-app {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 8px;
+  padding: 20px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#todo-input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+#add-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5cb85c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+
+  /* 클릭 이벤트 요소에 지정 권장 (마우스 커서가 포인터로 변경) */
+  cursor: pointer;
+}
+
+#add-button:hover {
+  background-color: #4cae4c;
+}
+
+#todo-list {
+  /* 순서가 없는 ul 태그의 기본 스타일: 불릿 + 패딩 */
+  list-style-type: none;
+  padding: 0;
+}
+
+/* 동적으로 생성 될 li 태그 스타일링 */
+.todo-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+
+  /* 내부 요소들 배치 */
+  display: flex;
+  /* 주축(x축) 기준 양 끝 공백 없이 요소 사이의 공백을 균일 */
+  justify-content: space-between;
+  align-items: center;
+}

@@ -11,8 +11,7 @@ let todoInput = document.querySelector('#todo-input');
 let addButton = document.querySelector('#add-button');
 let todoList = document.querySelector('#todo-list');
 
-// 추가 버튼 클릭 시
-addButton.addEventListener('click', () => {
+function addTodo() {
   // input 태그에 입력 값이 있는 경우
   if (todoInput.value !== '') {
     // 동적으로 li 태그 생성
@@ -35,7 +34,20 @@ addButton.addEventListener('click', () => {
     //? input 등과 같이 상호작용 된 데이터는 사용하고나면 해당 데이터 초기화
     todoInput.value = '';
   }
-});
+}
+
+// 추가 버튼 클릭 시
+addButton.addEventListener('click', addTodo);
+
+// +) Enter 키보드 클릭으로 할 일 등록
+//    : Enter 키 입력 시 (todoInput 요소 내)
+todoInput.addEventListener('keydown', (e) => {
+  // e.key : 키보드 이벤트 발생 시 입력된 키 값이 반환
+  if (e.key === 'Enter') {
+    addTodo();
+  }
+})
+
 
 // e: 이벤트 객체
 // - target: 이벤트가 발생한 요소를 참조

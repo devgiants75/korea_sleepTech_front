@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event01.html</title>
+</head>
+<body>
+  <!-- ! JS 이벤트 -->
+  <!-- 1) HTML 이벤트 핸들러 프로퍼티 -->
+  <h2>HTML 이벤트 핸들러 프로퍼티</h2>
+  <button id="bgChange">Change Background Color</button>
+  <p id="keydown"></p>
+
+  <h2>인라인 이벤트 핸들러</h2>
+  <!-- 
+    on 키워드를 사용한 이벤트 속성을 태그에 지정
+    : 연결할 함수는 JS에서 작성
+    - on이벤트="js에서 정의된 함수"
+  -->
+  <button id="textChange" style="font-size: 20px;" onclick="textChangeFunc()">
+    Change Text Color
+  </button>
+
+  
+  <script src="event01.js"></script>
+</body>
+</html>

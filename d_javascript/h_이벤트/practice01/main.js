@@ -46,7 +46,7 @@ todoInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     addTodo();
   }
-})
+});
 
 // e: 이벤트 객체
 // - target: 이벤트가 발생한 요소를 참조

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index.html</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>할 일 목록</h1>
+    <form id="new-todo-form">
+      <!-- 
+        ? bool 속성
+        : 속성명 명시할 경우 >> 속성="true"와 동일
+
+        cf) 속성명 명시하지 않을 경우 >> 속성="false"와 동일
+
+        EX) required, checked, autofocus 속성 등
+      -->
+      <input type="text" id="new-todo" placeholder="새로운 할 일 추가" required />
+      <button type="submit">추가</button>
+    </form>
+    <ul id="todo-list">
+      <li class="completed">
+        첫 번째 할일 <button class="delete-button">X</button>
+      </li>
+      <li>
+        두 번째 할일 <button class="delete-button">X</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -130,3 +130,60 @@ function textChangeFunc() {
     }
   }
 */ 
+
+// 1. document.querySelector('선택자');
+// : 같은 선택자가 여러 개일 경우 첫 번째 요소만 가져옴
+
+const btnButton = document.querySelector('.btn');
+btnButton.onclick = function() {
+  console.log('.btn 요소 중 첫 번째 요소가 클릭되었습니다.');
+}
+
+// 2. document.querySelectorAll('선택자');
+// : 여러 개의 요소 참조를 모두 가져와 한 번에 이벤트 핸들러를 등록
+// - 해당 참조값들이 
+
+const divs = document.querySelectorAll('div');
+
+divs.forEach(div => div.onclick = function() {
+  // 클릭 이벤트가 일어난 요소 그 자체
+  this.style.backgroundColor = randomColorFunc();
+});
+
+//# 3) addEventListener 메서드
+// : 표준 이벤트 모델
+// : HTML 요소에 addEventListener 메서드를 사용하여 이벤트를 등록
+// - 한 요소에 여러 개의 이벤트 핸들러 등록 가능
+
+const btnsButton = document.querySelectorAll('.btnsChange');
+
+// addEventLisener()은 인자로 이벤트와 콜백함수를 받음
+btnsButton.forEach(btn => {
+  // btn은 DOM 요소 (HTML 요소를 객체로 변환)
+  btn.addEventListener('click', function() {
+    const randomColor = randomColorFunc();
+    btn.style.backgroundColor = randomColor;
+  });
+});
+
+//! === 4. 이벤트 제거하는 방법 ===
+// : removeEventListener() 메서드 사용
+// - 이벤트 핸들러 제거
+const removeButton = document.querySelector('#remove');
+
+let removeChange = () => {
+  const randomColor = randomColorFunc();
+  removeButton.style.color = randomColor;
+}
+
+// 이벤트 리스너 등록
+removeButton.addEventListener('click', removeChange);
+
+// cf) 함수 호출 VS 함수 등록
+// 함수 호출: 함수명()
+//  >> 코드를 읽는 즉시 함수 실행
+// 함수 등록: 함수명
+//  >> 부가적인 발생, 함수를 전달하여 실행
+
+// 이벤트 리스너 제거
+removeButton.removeEventListener('click', removeChange);

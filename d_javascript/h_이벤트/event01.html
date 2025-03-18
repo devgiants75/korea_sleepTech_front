@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>event01.html</title>
+  <style>
+    div {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      margin: 10px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
   <!-- ! JS 이벤트 -->
@@ -22,6 +31,27 @@
     Change Text Color
   </button>
 
+  <hr />
+  <h2>1. querySelector</h2>
+  <button class="btn">버튼1을 클릭해주세요.</button>
+  <button class="btn">버튼2을 클릭해주세요.</button>
+
+  <h2>2. querySelectorAll</h2>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+
+  <hr />
+
+  <h2>addEventListenr 메서드 사용</h2>
+  <!-- button.btnsChange*3 -->
+  <button class="btnsChange">Change Buttons Color</button>
+  <button class="btnsChange">Change Buttons Color</button>
+  <button class="btnsChange">Change Buttons Color</button>
+
+  <hr />
+  <p>이벤트 제거</p>
+  <button id="remove">이벤트 제거</button>
   
   <script src="event01.js"></script>
 </body>

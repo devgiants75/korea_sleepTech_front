@@ -48,7 +48,6 @@ todoInput.addEventListener('keydown', (e) => {
   }
 })
 
-
 // e: 이벤트 객체
 // - target: 이벤트가 발생한 요소를 참조
 // - currentTarget: 이벤트가 첨부된 요소(todoList)

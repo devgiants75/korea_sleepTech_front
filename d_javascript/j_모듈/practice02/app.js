@@ -81,5 +81,4 @@ function updateTodoList() {
     todoList.appendChild(li);
   });
 }
-
 updateTodoList();

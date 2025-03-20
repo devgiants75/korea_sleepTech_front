@@ -1,0 +1,59 @@
+body {
+  width: 640px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.full-img {
+  /* 위치 지정 속성 */
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 480px;
+}
+
+.full-img img {
+  width: 100%; /* 640px; */
+  height: 100%; /* 480px; */
+}
+
+.overlay {
+  /* 
+    위치 지정 속성: absolute (절대적인 위치)
+    >> 상위 요소 중 가장 가까운 relative 요소를 기준으로 정렬
+  */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 640px;
+  height: 480px;
+
+  /* 투명 색상 */
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  border: 1px solid #999;
+  padding: 10px;
+  background-color: rgba(150, 150, 150, 0.6);
+  border-radius: 5px;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px rgb(212, 212, 212);
+}
+
+/* 선택자A 선택자B (띄어쓰기): 중첩된 자식 요소 */
+.thumb-bar img {
+  display: block;
+  width: 20%;
+  height: 100px;
+  float: left;
+  cursor: pointer;
+}

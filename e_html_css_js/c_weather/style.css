@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  width: 640px;
+  height: 100vh;
+}
+
+#weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 250px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+button {
+  width: 250px;
+}

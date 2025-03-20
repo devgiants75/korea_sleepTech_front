@@ -81,3 +81,26 @@ img {
   width: 100%;
   height: 100%;
 }
+
+#button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  background-color: rgba(15, 125, 40, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: rgba(4, 180, 49, 0.8);
+  transform: scale(1.05);
+}

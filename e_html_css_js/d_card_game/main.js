@@ -17,7 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //! 색상 배열 정의 (6개)
   // : 임의의 색상 지정 가능
-  const colors = ['black', 'red', 'yellow', 'pink', 'orange', 'blue'];
+  // const colors = ['black', 'red', 'yellow', 'pink', 'orange', 'blue'];
+  const colors = [
+    "#cc3131",
+    "#e3ddbb",
+    "#23b923",
+    "#34bcbc",
+    "#3939db",
+    "#e5b7e4",
+  ];
 
   //! colors 배열의 색상을 복제하여 새로운 배열 cardColors 생성
   //? : 스프레드(...)연산자를 사용

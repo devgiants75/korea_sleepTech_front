@@ -94,6 +94,27 @@ const exampleFunc2 = (num: number): number[] => {
 // 변수 isStudent를 선언하고 불리언 타입으로 어노테이션을 지정
 // 위 두 변수에 적절한 값을 할당하고, 콘솔에 출력
 
+let age: number;
+let isStudent: boolean;
+
+age = 30;
+isStudent = true;
+
+console.log(`Age: ${age}, IsStudent: ${isStudent}`); // Age: 30, IsStudent: true
+
 //! 문제 2: 타입 별칭 사용
 // ProductType이라는 타입 별칭을 생성
 // 객체, id (문자열 타입), name (문자열 타입), price (숫자 타입) 속성 포함
+type ProductType = {
+  id: string;
+  name: string;
+  price: number;
+  // +) 타입 별칭은 ,(콤마) ;(세미콜론) 모두 사용 가능
+  //    >> 일반 객체와의 구분을 위해 세미콜론 사용을 권장!
+}
+
+let product: ProductType = {
+  id: 'qwe123',
+  name: '이승아',
+  price: 4000
+}

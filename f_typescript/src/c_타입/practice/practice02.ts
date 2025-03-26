@@ -1,0 +1,1 @@
+// practice02.ts

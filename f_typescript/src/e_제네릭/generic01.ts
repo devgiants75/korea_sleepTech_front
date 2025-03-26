@@ -57,14 +57,66 @@ console.log(resultFunc); // [ true, true, false ]
 // : 타입 매개변수 T
 
 interface IGeneric<T> {
+  // 인터페이스(객체)의 메서드
   (key: T): T;
 }
 
+// 함수
 function example<T>(arg: T): T {
   return arg;
 }
 
 let myGeneric: IGeneric<number> = example;
+// 함수 example을 IGenric<number> 인터페이스에 할당!
+
+// myGeneric: 객체
+// >> example은 객체의 메서드 형태로 할당!
 
 console.log(example(5)); // 5
 console.log(myGeneric(5)); // 5
+
+// 3) 제네릭 클래스
+class GenericClass<T> {
+  value: T;
+  add: (x: T, y: T) => T;
+
+  constructor(value: T, addFunc: (x: T, y: T) => T) {
+    this.value = value;
+    this.add = addFunc;
+  }
+}
+
+let myGenericNumber = new GenericClass<number>(0, (x, y) => x + y);
+console.log(myGenericNumber.add(4, 6)); // 10
+
+//# 제네릭 함수 구현 예제
+function reverseArray<T>(array: T[]): T[] {
+  // 배열 메서드
+  // : .reverse()
+  // - 요소의 순서를 역전시키는 메서드
+  let reverseArr = array.reverse();
+  return reverseArr
+}
+
+let stringArr = reverseArray(['1', '2', '3']);
+// let stringArr = reverseArray<string>(['1', '2', '3']);
+// : 배열 안의 요소 타입으로 타입 변수값이 자동 지정
+
+let booleanArr = reverseArray([true, true, false, true]);
+console.log(booleanArr); // [ true, false, true, true ]
+
+//# 제네릭 인터페이스 예제
+interface KeyValue<K, V> {
+  key: K,
+  value: V
+}
+
+let keyValue1: KeyValue<string, number> = {
+  key: '이승아',
+  value: 123
+}
+
+let keyValue2: KeyValue<boolean, string> = {
+  key: true,
+  value: '이도경'
+}

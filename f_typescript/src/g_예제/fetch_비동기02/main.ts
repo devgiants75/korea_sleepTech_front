@@ -17,7 +17,7 @@
 type PhotoType = {
   albumId: number;
   id: number;
-  titld: string;
+  title: string;
   url: string;
   thumbnailUrl: string;
 }
@@ -53,8 +53,43 @@ async function fetchPhotos(page: number) {
   }
 }
 
+//? 사진을 랜더링 하는 함수: 4개씩 나누어진 사진 배열을 매개변수로 받음
 function renderPhotos(photos: PhotoType[]) {
   const container = document.getElementById('photo-container') as HTMLElement;
 
   container.innerHTML = '';
+
+  // 각 사진에 대한 HTML 요소 생성
+  photos.forEach(photo => {
+    const photoElement = document.createElement('div');
+    photoElement.className = 'photo-item';
+    photoElement.innerHTML = `
+      <img src='${photo.thumbnailUrl}' alt='${photo.title}' />
+      <p>${photo.title}</p>
+    `;
+    container.appendChild(photoElement);
+  })
 }
+
+//! 버튼 이벤트 등록
+document.getElementById('prev-button')!.addEventListener('click', () => {
+  // 이벤트가 등록될 DOM 요소에 대한 단언: ! 기호
+  if (currentPage > 1) {
+    currentPage--;
+    updatePhotos();
+  }
+});
+
+document.getElementById('next-button')!.addEventListener('click', () => {
+  currentPage++;
+  updatePhotos();
+});
+
+//? 전체 프로젝트 실행
+async function updatePhotos() {
+  const photos = await fetchPhotos(currentPage);
+
+  renderPhotos(photos);
+}
+
+updatePhotos();

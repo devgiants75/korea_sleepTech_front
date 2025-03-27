@@ -39,6 +39,23 @@
     }
   };
 
-  
+  //# 각 데이터가 나열될 카드를 동적으로 생성하는 함수
+  // @Params
+  // - IUser 타입의 객체 데이터
+  const createUserCard = (user: IUser): HTMLElement => {
+    const userCard = document.createElement('div');
+    userCard.className = 'user-card';
+
+    userCard.innerHTML = `
+      <h2>${user.name}</h2>
+      <p><strong>Username: </strong> ${user.username}</p>
+      <p><strong>Email: </strong> ${user.email}</p>
+    `;
+
+    return userCard;
+  }
+
+
+  //# 생성된 카드를 화면에 출력하는 함수
 
 }

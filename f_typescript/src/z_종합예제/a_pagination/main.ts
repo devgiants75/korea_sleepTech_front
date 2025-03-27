@@ -57,5 +57,66 @@
 
 
   //# 생성된 카드를 화면에 출력하는 함수
+  // @Params: 사용자 배열을 전달
+  const diplayUsers = (users: Users) => {
+    const userList = document.getElementById('user-list');
 
+    if (userList) {
+      userList.innerHTML = '';
+
+      users.forEach(user => {
+        const userCard = createUserCard(user);
+        userList.appendChild(userCard);
+      })
+    }
+  }
+
+  // 현재 페이지 수를 기본값 1로 설정
+  let currentPage = 1;
+
+  //# 현재 페이지 정보를 수정하는 함수
+  const updatePageInfo = () => {
+    const pageInfo = document.getElementById('page-info');
+
+    if (pageInfo) {
+      pageInfo.textContent = `Page ${currentPage}`;
+    }
+  }
+
+  //# 비동기적으로 데이터를 가져와서 각 페이지별 카드 생성 + 출력하는 함수
+  const loadPage = async (page: number) => {
+    const users = await fetchUsers(page);
+
+    // 현재 페이지에 해당하는 3개(기본값)의 데이터를 displayUsers에 전달
+    diplayUsers(users);
+
+    updatePageInfo();
+  }
+
+  //# addEventListeners 함수: 이벤트 리스너 추가
+  const addEventListeners = () => {
+    const prevPageButton = document.getElementById('prev-page');
+    const nextPageButton = document.getElementById('next-page');
+
+    if (prevPageButton && nextPageButton) {
+      prevPageButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          loadPage(currentPage);
+        }
+      });
+
+      nextPageButton.addEventListener('click', () => {
+        currentPage++;
+        loadPage(currentPage);
+      })
+    }
+  }
+
+  const init = () => {
+    addEventListeners();
+    loadPage(currentPage);
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
 }

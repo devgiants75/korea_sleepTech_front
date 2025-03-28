@@ -40,6 +40,10 @@
   const createUserCard = (user: IUser): HTMLElement => {
     const userCard = document.createElement('div');
     userCard.className = 'user-card';
+    // 요소에 사용자 지정 속성을 지정
+    // : HTML에서 제공하는 속성 외에 커스텀 속성을 생성
+    userCard.dataset.userId = user.id.toString();
+
     userCard.innerHTML = `
       <h2>${user.name}</h2>
       <p><strong>Username: </strong>${user.username}</p>
@@ -90,16 +94,45 @@
         // - target: 이벤트가 처음 발생한 DOM 요소(클릭이 일어난 요소)
         // - currentTarget: 발생한 이벤트가 등록된(이벤트 핸들러가 바인딩 된) DOM 요소
         const target = e.target as HTMLElement;
-        
-        //
+        // >> 클릭이 발생한 요소는 card 내부의 h2, p태그가 될 가능성이 존재
+
+        // 이벤트가 발생한 요소와 가장 가까운(closest) .user-card 요소를 반환
+        const userCard = target.closest('.user-card') as HTMLElement | null;
+
+        if (userCard) {
+          const userId = parseInt(userCard.dataset.userId || '0', 10);
+          // users 배열에서 userId와 일치하는 사용자 객체 반환
+          const user = users.find(u => u.id === userId);
+          if (user) {
+            showModal(user);
+          }
+        }
       })
     }
-  }
+
+    const modal = document.getElementById('user-modal') as HTMLElement;
+    const closeModal = document.querySelector('.close') as HTMLElement;
+
+    if (modal && closeModal) {
+      closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      // 브라우저 전체를 DOM 요소로 반환(브라우저 탭의 전체 여역)
+      // <=> document: window에 로드되는 HTML 문서 그 자체
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  };
 
   //!
   const init = async(): Promise<void> => {
     const users = await fetchUsers();
     displayUsers(users);
+    addEventListener(users);
   }
 
   document.addEventListener('DOMContentLoaded', init);

@@ -65,6 +65,9 @@ var _this = this;
     var createUserCard_1 = function (user) {
         var userCard = document.createElement('div');
         userCard.className = 'user-card';
+        // 요소에 사용자 지정 속성을 지정
+        // : HTML에서 제공하는 속성 외에 커스텀 속성을 생성
+        userCard.dataset.userId = user.id.toString();
         userCard.innerHTML = "\n      <h2>".concat(user.name, "</h2>\n      <p><strong>Username: </strong>").concat(user.username, "</p>\n      <p><strong>Email: </strong>").concat(user.email, "</p>\n    ");
         return userCard;
     };
@@ -80,6 +83,52 @@ var _this = this;
             });
         }
     };
+    //! 6) 사용자 정보를 받아 모달 창에 표시하는 함수
+    var showModal_1 = function (user) {
+        var modal = document.getElementById('user-modal');
+        var modalContent = document.getElementById('modal-user-details');
+        if (modal && modalContent) {
+            modalContent.innerHTML = "\n        <h2>".concat(user.name, "</h2>\n        <p><strong>Username: </strong>").concat(user.username, "</p>\n        <p><strong>Email: </strong>").concat(user.email, "</p>\n        <p><strong>Phone: </strong>").concat(user.phone, "</p>\n        <p><strong>Website: </strong>").concat(user.website, "</p>\n      ");
+            modal.style.display = 'block'; // 모달 창 표시
+        }
+    };
+    //! 7) 사용자 리스트에 이벤트 리스너를 추가하는 함수
+    var addEventListener_1 = function (users) {
+        var userList = document.getElementById('user-list');
+        if (userList) {
+            userList.addEventListener('click', function (e) {
+                //? cf) target VS currentTarget
+                // - target: 이벤트가 처음 발생한 DOM 요소(클릭이 일어난 요소)
+                // - currentTarget: 발생한 이벤트가 등록된(이벤트 핸들러가 바인딩 된) DOM 요소
+                var target = e.target;
+                // >> 클릭이 발생한 요소는 card 내부의 h2, p태그가 될 가능성이 존재
+                // 이벤트가 발생한 요소와 가장 가까운(closest) .user-card 요소를 반환
+                var userCard = target.closest('.user-card');
+                if (userCard) {
+                    var userId_1 = parseInt(userCard.dataset.userId || '0', 10);
+                    // users 배열에서 userId와 일치하는 사용자 객체 반환
+                    var user = users.find(function (u) { return u.id === userId_1; });
+                    if (user) {
+                        showModal_1(user);
+                    }
+                }
+            });
+        }
+        var modal = document.getElementById('user-modal');
+        var closeModal = document.querySelector('.close');
+        if (modal && closeModal) {
+            closeModal.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+            // 브라우저 전체를 DOM 요소로 반환(브라우저 탭의 전체 여역)
+            // <=> document: window에 로드되는 HTML 문서 그 자체
+            window.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    };
     //!
     var init = function () { return __awaiter(_this, void 0, void 0, function () {
         var users;
@@ -89,6 +138,7 @@ var _this = this;
                 case 1:
                     users = _a.sent();
                     displayUsers_1(users);
+                    addEventListener_1(users);
                     return [2 /*return*/];
             }
         });

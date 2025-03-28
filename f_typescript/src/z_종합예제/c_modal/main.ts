@@ -60,4 +60,13 @@
       })
     }
   }
+
+
+  //!
+  const init = async(): Promise<void> => {
+    const users = await fetchUsers();
+    displayUsers(users);
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
 }

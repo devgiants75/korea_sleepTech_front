@@ -64,6 +64,7 @@ var _this = this;
     //! 4) 사용자 각각의 정보를 요소로 생성
     var createUserCard_1 = function (user) {
         var userCard = document.createElement('div');
+        userCard.className = 'user-card';
         userCard.innerHTML = "\n      <h2>".concat(user.name, "</h2>\n      <p><strong>Username: </strong>").concat(user.username, "</p>\n      <p><strong>Email: </strong>").concat(user.email, "</p>\n    ");
         return userCard;
     };

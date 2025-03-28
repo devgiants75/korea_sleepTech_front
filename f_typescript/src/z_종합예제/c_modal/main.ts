@@ -39,6 +39,7 @@
   //! 4) 사용자 각각의 정보를 요소로 생성
   const createUserCard = (user: IUser): HTMLElement => {
     const userCard = document.createElement('div');
+    userCard.className = 'user-card';
     userCard.innerHTML = `
       <h2>${user.name}</h2>
       <p><strong>Username: </strong>${user.username}</p>
@@ -61,6 +62,39 @@
     }
   }
 
+  //! 6) 사용자 정보를 받아 모달 창에 표시하는 함수
+  const showModal = (user: IUser): void => {
+    const modal = document.getElementById('user-modal');
+    const modalContent = document.getElementById('modal-user-details');
+    
+    if (modal && modalContent) {
+      modalContent.innerHTML = `
+        <h2>${user.name}</h2>
+        <p><strong>Username: </strong>${user.username}</p>
+        <p><strong>Email: </strong>${user.email}</p>
+        <p><strong>Phone: </strong>${user.phone}</p>
+        <p><strong>Website: </strong>${user.website}</p>
+      `;
+
+      modal.style.display = 'block'; // 모달 창 표시
+    }
+  }
+
+  //! 7) 사용자 리스트에 이벤트 리스너를 추가하는 함수
+  const addEventListener = (users: UsersType) => {
+    const userList = document.getElementById('user-list') as HTMLElement;
+
+    if (userList) {
+      userList.addEventListener('click', (e) => {
+        //? cf) target VS currentTarget
+        // - target: 이벤트가 처음 발생한 DOM 요소(클릭이 일어난 요소)
+        // - currentTarget: 발생한 이벤트가 등록된(이벤트 핸들러가 바인딩 된) DOM 요소
+        const target = e.target as HTMLElement;
+        
+        //
+      })
+    }
+  }
 
   //!
   const init = async(): Promise<void> => {

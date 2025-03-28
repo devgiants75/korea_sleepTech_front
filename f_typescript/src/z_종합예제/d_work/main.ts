@@ -114,17 +114,19 @@
         taskLogger.addTask(description.trim());
         taskInput.value = "";
 
-        if (taskModal) {
-          taskModal.style.display = "none";
-        }
+        // if (taskModal) {
+        //   taskModal.style.display = "none";
+        // }
+        taskModal!.style.display = "none";
       } else {
         alert("Task 설명은 비워질 수 없습니다. 내용을 입력해주세요.");
       }
     };
 
-    if (addTaskButton) {
-      addTaskButton.addEventListener("click", handleAddTask);
-    }
+    // if (addTaskButton) {
+    //   addTaskButton.addEventListener("click", handleAddTask);
+    // }
+    addTaskButton?.addEventListener('click', handleAddTask);
 
     taskInput.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {

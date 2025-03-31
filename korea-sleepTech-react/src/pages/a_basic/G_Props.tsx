@@ -28,7 +28,7 @@ const UserCard = ({ user }: UserCardProps) => {
   return (
     <>
       <p>{user.name} / {user.age} / {user.email}</p>
-      <p>{name} / {age} / {email}</p>
+      {/* <p>{name} / {age} / {email}</p> */}
     </>
   )
 }
@@ -59,9 +59,10 @@ function G_Props() {
     // : 전달할 ReactNode 작성
     <Wrapper>
       {/* 
+      == 콘솔창에 입력값 2번 실행 ==
       strictMode >> import { StrictMode } from 'react' 
       : main.tsx에서 명시
-      - 렌더링 시 컴포넌트를 일부러 두 번 실행 (부작용 확인)
+      - 렌더링 시 컴포넌트를 일부러 콘솔창에 두 번 실행 (부작용 확인)
       */}
       <UserCard user={{ name: '이승아', age: 30, email: 'qwe123'}} />
       <UserCard user={userData} />

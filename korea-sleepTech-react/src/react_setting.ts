@@ -49,3 +49,63 @@ export const tmp = '';
 // : npm install
 // 2. Permission denied(macOS)
 // : 명령어 앞에 sudo 추가 || 권한 설정 확인
+
+//# 1. package.json
+/*
+{
+  "name": "korea-sleeptech-react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": { //! npm run 이후의 명령어
+    "dev": "vite", 
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": { //! 애플리케이션 동작과 연관된 의존성 라이브러리
+    "react": "^19.0.0", //? 리액트 라이브러리
+    "react-dom": "^19.0.0" //? 실제 DOM과 연결해주는 라이브러리
+  },
+  "devDependencies": { //! 애플리케이션 동작과는 무관하지만 개발 시 필요한 의존성 라이브러리 
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10", //? TypeScript용 리액트 타입 정의
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4", //? React 플러그링 (JSX 지원)
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "typescript": "~5.7.2", //? TypeScript 컴파일러
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0" //? Vite 번들러
+  }
+}
+*/ 
+
+//# 2. tsconfig.app.json
+// : TypeScript 설정 파일
+
+//# 3. vite.config.ts
+// : Vite 설정 파일
+// - Vite 프로젝트의 빌드/개발 설정 담당
+// - 플러그인, 경로 alias, 서버 설정 등을 설정 가능
+
+/*
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()], //! React JSX를 인식하기 위한 플러그인
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'), //! @ 기호를 src 폴더로 인식
+    }
+  }
+})
+*/
+
+//# 4. index.html
+// : 진입점 HTML 템플릿
+// - React 앱을 실행할 HTML 뼈대를 제공
+// - 개발 중에도 해당 파일을 기준으로 동작 (Vite가 해당 파일을 분석하여 앱 실행)

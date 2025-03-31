@@ -4,10 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Korea SleepTech React</title>
   </head>
   <body>
+    <!-- React 컴포넌트가 마운트(렌더링) 될 자리 -->
     <div id="root"></div>
+
+    <!-- 
+      ! Vite가 해당 script를 찾아서 앱을 실행 
+      - type="module"
+        : ES 모듈 방식으로 JS 실행
+      - src="/src/main.tsx"
+        : 앱의 진입점인 main.tsx를 불러옴
+    -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -34,9 +34,17 @@ function E_JSX() {
   */
 
   return (
-    <div>
-      
-    </div>
+    <>
+      <div style={cat.theme}>
+        <p>{cat.name}'s Picture</p>
+        <img 
+          src={cat.catUrl + cat.description + cat.imageId} 
+          alt={cat.name} 
+          width={cat.imageTheme.width}
+          height={cat.imageTheme.height}
+        />
+      </div>
+    </>
   )
 }
 

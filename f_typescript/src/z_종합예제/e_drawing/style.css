@@ -32,6 +32,7 @@ body {
 input[type="color"],
 input[type="range"],
 button {
+  /* 해당 패딩 지정으로 range 범위가 드래그 가능한 범위가 시각적으로 줄어들 수 있음 */
   padding: 10px 14px;
   font-size: 0.95rem;
   border-radius: 12px;

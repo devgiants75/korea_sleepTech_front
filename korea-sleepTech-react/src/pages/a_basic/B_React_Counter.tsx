@@ -40,7 +40,7 @@ function B_React_Counter() {
   //? jsx(tsx) 에서는 return문을 사용하여 HTML 영역을 반환
   return (
     <div>
-      <h1>VS 타입스크립트(카운터 예제)</h1>
+      <p>VS 타입스크립트(카운터 예제)</p>
       <p>Count: {count}</p>
       {/* 
         ? JSX(TSX)에서는 속성 지정 시 lowerCamelCase 사용

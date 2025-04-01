@@ -2,6 +2,7 @@ import React from "react";
 import UseState01 from "./a_useState/UseState01";
 import UseState02 from "./a_useState/UseState02";
 import UseState03 from "./a_useState/UseState03";
+import UseState04 from "./a_useState/UseState04";
 
 const h2Style = {
   backgroundColor: "black",
@@ -24,6 +25,7 @@ function Index() {
       <UseState01 /> <hr />
       <UseState02 /> <hr />
       <UseState03 /> <hr />
+      <UseState04 /> <hr />
     </div>
   );
 }

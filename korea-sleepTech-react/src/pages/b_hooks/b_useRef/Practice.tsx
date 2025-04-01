@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 //! === 장바구니 구현 === //
 // : 배열 렌더링 (추가, 조회, 수정, 삭제 - CRUD)
@@ -48,6 +48,38 @@ function Item({ item, onUpdate, onRemove }: IItemProps) {
 
 //& 부모 컴포넌트
 function Practice() {
+  const [items, setItems] = useState<IItem[]>(initialItems);
+  const nextId = useRef<number>(4);
+
+  const handleCreateItem = (name: string, amount: number) => {
+    const newItem = {
+      id: nextId.current,
+      name,
+      amount,
+    };
+    setItems([...items, newItem]);
+    nextId.current++; // items(상태 변수)의 변경 여부와 상관없이 값이 유지
+  };
+
+  const handleUpdateAmount = (id: number, amount: number) => {
+    // 전체 배열을 순회하여 각 차례의 아이템의 id와 매개변수의 id가
+    // 1) 일치한다면: 새로운 객체에 전체 속성을 가져와 amount값만 수정
+    // 2) 일치하지 않는다면: 해당 아이템 그대로 반환
+
+    // >> 변경된 배열을 상태 설정 함수의 인자로 전달
+    setItems(
+      items.map((item) => (item.id === id ? { ...item, amount } : item))
+    );
+  };
+
+  const handleRemoveItem = (id: number) => {
+    // 전체 배열을 순회하여 각 차례의 아이템의 id와 매개변수의 id가
+    // , 일치하지 않는 요소들만 새로운 배열에 담아 반환
+
+    // >> 변경된 배열을 상태 설정 함수의 인자로 전달
+    setItems(items.filter((item) => item.id !== id));
+  };
+
   return (
     <div
       style={{
@@ -59,12 +91,19 @@ function Practice() {
       <Item item={initialItems[1]} />
       <Item item={initialItems[2]} /> 
       */}
-      {initialItems.map((item) => (
+      <hr />
+      <button onClick={() => handleCreateItem('새로운 항목', 1)}>새 항목 추가</button>
+      {items.map((item) => (
         // map, filter처럼 배열을 순회하는 메서드 사용 시
         // : 생성되는 컴포넌트 또는 요소에 각각을 구분할 수 있는 key값을 전달
         // >> key값은 각 요소를 분리할 수 있는 고유값 지정을 권장!!
         // <Item item={item} key={index} />
-        <Item item={item} key={item.id} />
+        <Item
+          item={item}
+          key={item.id}
+          onRemove={handleRemoveItem}
+          onUpdate={handleUpdateAmount}
+        />
       ))}
       <hr />
     </div>

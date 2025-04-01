@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 
 //! useState: '컴포넌트 내에서' 데이터에 대한 상태 관리
 // - 주로 UI에서 발생하는 이벤트에 반응하여 상태 변화

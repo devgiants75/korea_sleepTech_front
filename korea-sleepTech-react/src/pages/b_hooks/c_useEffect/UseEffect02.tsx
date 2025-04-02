@@ -76,6 +76,12 @@ function UseEffect02() {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
+      {/* 
+      JSX 문법
+      - HTML 내에 JS는 {}
+      - JS 내에 HTML은 ()
+      
+      */}
       {loading && <div>게시물을 로딩중입니다.</div>}
       {error && <div>Error: {error}</div>}
 

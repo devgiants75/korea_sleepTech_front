@@ -1,0 +1,70 @@
+/* 전체 화면 중앙 정렬 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f4ff, #d6e4ff);
+  padding: 20px;
+}
+
+/* 카드 박스 */
+.camera-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 제목 */
+.title {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #3b3b98;
+}
+
+/* 캡쳐 버튼 */
+.capture-button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3b3b98;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.capture-button:hover {
+  background-color: #2f2fa2;
+}
+
+/* 비디오 */
+.video {
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 이미지 표시 영역 */
+.image-section {
+  margin-top: 20px;
+}
+
+/* 소제목 */
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* 캡쳐된 이미지 */
+.captured-image {
+  width: 320px;
+  height: 240px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

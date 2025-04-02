@@ -16,6 +16,8 @@ import UseEffect02 from "./c_useEffect/UseEffect02";
 import UseCallback from "./d_useCallback_useMemo/UseCallback";
 import UseMemo from "./d_useCallback_useMemo/UseMemo";
 import ReactMemo from "./d_useCallback_useMemo/ReactMemo";
+import UseReducer01 from "./e_useReducer/UseReducer01";
+import UseReducer02 from "./e_useReducer/UseReducer02";
 
 const h2Style = {
   backgroundColor: "black",
@@ -33,6 +35,9 @@ function Index() {
       >
         === 리액트 Hooks ===
       </h1>
+      <h2 style={h2Style}>리액트 Hooks - useReducer</h2>
+      <UseReducer01 />
+      <UseReducer02 />
       
       <h2 style={h2Style}>리액트 Hooks - useCallback & useMemo</h2>
       <UseCallback />

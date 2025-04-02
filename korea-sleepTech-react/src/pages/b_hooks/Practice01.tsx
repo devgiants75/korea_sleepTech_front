@@ -30,16 +30,39 @@ function Practice01() {
     setupWebcam(); // 위에서 정의한 웹캠 설정 함수 호출
   }, []); // 빈 의존성 배열: 컴포넌트 마운트 시에만 효과 실행
 
+  //! 이미지 캡쳐 함수 정의
+  const handleCaptureImage = () => {
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+
+    if (video && canvas) {
+      const context = canvas.getContext('2d'); // 캔버스의 2D 렌더링 컨텍스트 가져오기
+      if (context) {
+        // 비디오의 현재 프레임을 캔버스에 그림
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        // 캔버스의 내용을 PNG 형식으로 데이터 URL 변환
+        const imageData = canvas.toDataURL('image/png');
+        setImage(imageData);
+      }
+    }
+  }
+
   return (
     <div>
       <h1>카메라 앱</h1>
       {/* playsInline: 전체화면 전환 없이 바로 재생 */}
       <video ref={videoRef} autoPlay playsInline width='320' height='240'></video>
-      <button>이미지 캡쳐</button>
+      <button onClick={handleCaptureImage}>이미지 캡쳐</button>
 
-      <canvas width='320' height='240' style={{
+      <canvas ref={canvasRef} width='320' height='240' style={{
         display: 'none'
       }}></canvas>
+      {image && (
+        <div>
+          <h2>캡쳐된 이미지</h2>
+          <img src={image} alt="캡쳐된 이미지" style={{ width: '320', height: '240' }} />
+        </div>
+      )}
     </div>
   )
 }

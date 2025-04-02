@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState } from "react";
 
 //! === useCallback ===
 // : React 함수형 컴포넌트 Hook
@@ -14,29 +14,52 @@ import React, { useCallback, useState } from 'react'
 // : 부모의 리렌더링 마다 함수의 주소값이 변경되어 새로운 값으로 인식하고 자식 컴포넌트를 리렌더링
 
 const myFunc = () => {
-  console.log('함수 다시 생성!');
-}
+  console.log("함수 다시 생성!");
+};
 
-const callbackMyFunc = useCallback(() => {
-  console.log('함수 다시 생성!');
-}, []); // 첫 번째 인자: 콜백함수, 두 번째 인자: 의존성 배열
+//? 컴포넌트 내에서만 Hook 사용 가능!
+// >> 함수형 컴포넌트의 최상단에서만 호출 가능!
+
+// const callbackMyFunc = useCallback(() => {
+//   console.log('함수 다시 생성!');
+// }, []); // 첫 번째 인자: 콜백함수, 두 번째 인자: 의존성 배열
 
 // >> 배열 안의 값이 바뀔 때만 함수가 다시 생성!
 //    : 그렇지 않으면 이전에 만든 함수를 재사용! (메모이제이션)
 
+//# 자식 컴포넌트
+const Button = ({ handleClick }: { handleClick: () => void}) => {
+  // useCallback 사용 시 
+  // : 자식 컴포넌트 내부의 clg은 리렌더링
+  // - 부모로부터 전달 받는 함수의 인스턴스는 동일하게 유지
+  console.log('버튼이 렌더링되었습니다.');
+  return <button onClick={handleClick}>자식 버튼</button>
+}
+
+//# 부모 컴포넌트
 function UseCallback() {
   const [count, setCount] = useState<number>(0);
+  const [text, setText] = useState<string>("");
 
-  const handleCountClick = () => {
-    setCount(prevCount =>  prevCount + 1);
-  }
+  const handleCountClick = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, [count]);
 
   return (
     <div>
       <h5>useCallback</h5>
       <p>Count: {count}</p>
+      <button onClick={handleCountClick}>부모 버튼</button>
+      <Button handleClick={handleCountClick} />
+
+      <br />
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
     </div>
-  )
+  );
 }
 
-export default UseCallback
+export default UseCallback;

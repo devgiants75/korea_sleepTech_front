@@ -23,7 +23,9 @@ function TodoAppLocalStorage() {
   const [todos, setTodos] = useState<Todo[]>(loadTodosFromLocalStorage);
   const [inputValue, setInputValue] = useState<string>("");
   const nextId = useRef<number>(
-    todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1
+    todos.length > 0 
+    ? Math.max(...todos.map((todo) => todo.id)) + 1 
+    : 1
   );
 
   //? 할 일 추가 함수

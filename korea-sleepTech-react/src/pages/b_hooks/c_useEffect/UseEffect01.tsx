@@ -16,7 +16,7 @@ EX) API 호출, 이벤트 리스너 등록, 수동 DOM 조작 등
 
   useEffect & '라이프 사이클'
   : 마운팅과 업데이트에서 실행할 코드를 useEffect에서 관리
-  - 의존성 배열(deps)을 사용하여 업데이트 시 동작을 제거
+  - 의존성 배열(deps)을 사용하여 업데이트 시 동작을 제어
   
 ? useEffect의 기본 구조
 : 1-2개의 인자가 필요
@@ -31,6 +31,12 @@ EX) API 호출, 이벤트 리스너 등록, 수동 DOM 조작 등
 
 useEffect(() => {
   - 부수 효과 -
+
+  ? useEffect의 정리 함수 
+  : useEffect에서 함수를 return하면 해당 함수는 컴포넌트가 화면에서 사라질 때 (언마운트) 실행
+  >> 정리 함수(clean-up Function)
+  return () => {
+  }
 }, [의존성배열1, a, b, c]);
 
 VS 이벤트리스너
@@ -41,6 +47,7 @@ VS 이벤트리스너
 function UseEffect01() {
   const [count, setCount] = useState<number>(0);
   const [name, setName] = useState<string>('이승아');
+  const [time, setTime] = useState<number>(0);
 
   // 부수 효과를 나타내는 콜백함수는 필수!
   // 의존성 배열의 경우 선택! >> 모든 렌더링 마다 실행!
@@ -61,7 +68,20 @@ function UseEffect01() {
 
   useEffect(() => {
     console.log(`==Name: ${name} / Count: ${count}==`);
-  }, [name, count])
+  }, [name, count]);
+
+  useEffect(() => {
+    console.log('⏰ 타이머 시작');
+
+    const timer = setInterval(() => {
+      setTime(prev => prev + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+      console.log('타이머 정리됨 (컴포넌트가 사라짐)');
+    }
+  }, []);
 
   return (
     <div>
@@ -82,6 +102,8 @@ function UseEffect01() {
       <button onClick={() => setName(name === '이승아' ? "이도경" : "이승아")}>
         이름 변경
       </button>
+
+      <p>시간: {time}초</p>
     </div>
   )
 }

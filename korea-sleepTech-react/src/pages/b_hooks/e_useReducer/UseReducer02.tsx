@@ -13,8 +13,8 @@ type CountAction =
 
 const initialState: CountState = {
   count: 0,
-  step: 2
-}
+  step: 2,
+};
 
 // 리듀서 함수: 일반 함수
 function reducerStep(state: CountState, action: CountAction): CountState {
@@ -23,7 +23,7 @@ function reducerStep(state: CountState, action: CountAction): CountState {
       return { ...state, count: state.count + state.step };
     case "decrement":
       return { ...state, count: state.count - state.step };
-    case "reset": 
+    case "reset":
       return initialState;
     default:
       return state;
@@ -43,9 +43,13 @@ function UseReducer02() {
 
       <h5>카운터(2씩 증가/감소 & 초기화)</h5>
       <p>StepCount: {stepState.count}</p>
-      <button onClick={() => stepDispatch({ type: 'increment'})}>+2 증가</button>
-      <button onClick={() => stepDispatch({ type: 'decrement'})}>-2 감소</button>
-      <button onClick={() => stepDispatch({ type: 'reset'})}>초기화</button>
+      <button onClick={() => stepDispatch({ type: "increment" })}>
+        +2 증가
+      </button>
+      <button onClick={() => stepDispatch({ type: "decrement" })}>
+        -2 감소
+      </button>
+      <button onClick={() => stepDispatch({ type: "reset" })}>초기화</button>
     </div>
   );
 }

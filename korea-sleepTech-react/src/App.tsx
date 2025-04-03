@@ -28,7 +28,14 @@ function App() {
         */}
         <Route path='/basic' element={<Basic />} />
         <Route path='/hooks' element={<Hooks />} />
-        <Route path='/router' element={<Router />} />
+
+        {/* 
+          중첩 라우팅
+          : 해당 컴포넌트의 경로 내부에서 라우트 경로에 따라 페이지 전환이 일어남을 명시
+
+          path='/해당컴포넌트기본경로/*'
+        */}
+        <Route path='/router/*' element={<Router />} />
       </Routes>
     </>
   )

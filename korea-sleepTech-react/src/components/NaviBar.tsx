@@ -38,7 +38,7 @@ function NaviBar() {
             borderRadius: '5px'
           })}
         >
-          {link === '/' ? 'HOME' : link.toUpperCase() }
+          {link === '/' ? 'HOME' : link.toUpperCase()}
         </NavLink>
       ))}
     </div>

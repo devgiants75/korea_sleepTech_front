@@ -61,26 +61,13 @@ function Router01() {
       <Link to="/hooks">Hooks 문법으로 이동</Link>
 
       {/* 
-        Link 컴포넌트의 to 속성에 
+        Router 내부 컴포넌트들의 to 속성에 
         1) /로 시작하는 경우: 메인 Route 경로에서 시작
           >> http://localhost:5173/
 
         2) / 없이 곧바로 경로가 시작되는 경우: 현재 컴포넌트를 기준으로 경로가 시작
           >> http://localhost:5173/router/
       */}
-      <ul>
-        <li>
-          <Link to="a">a</Link>
-        </li>
-        <li>
-          <Link to="b">b</Link>
-        </li>
-      </ul>
-
-      <Routes>
-        <Route path='a' element={<A />} />
-        <Route path='b' element={<B />} />
-      </Routes>
     </div>
   )
 }

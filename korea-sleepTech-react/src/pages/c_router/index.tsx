@@ -7,6 +7,8 @@ import B from "./a_react_router_dom/B";
 import { Link } from "react-router-dom";
 import UseParams from "./a_react_router_dom/UseParams";
 import UseNavigate from "./a_react_router_dom/UseNavigate";
+import ParamsPage from "./a_react_router_dom/ParamsPage";
+import NavigatePage from "./a_react_router_dom/NavigatePage";
 
 const h2Style = {
   backgroundColor: "black",
@@ -50,6 +52,21 @@ function Index() {
 
       <h2 style={h2Style}>useNavigate</h2>
       <UseNavigate />
+
+      <h2 style={h2Style}>useParams & useNavigate</h2>
+      {/* 
+        App > router > ParamsPage.tsx, NavigatePage.tsx
+      */}
+      <ul>
+        <li><Link to='/router/param/123'>useParams 테스트 (ID: 123)</Link></li>
+        <li><Link to='/router/param/hello'>useParams 테스트 (ID: hello)</Link></li>
+        <li><Link to='/router/navigate'>useNavigate 테스트</Link></li>
+      </ul>
+
+      <Routes>
+        <Route path="param/:id" element={<ParamsPage />} />
+        <Route path="navigate" element={<NavigatePage />} />
+      </Routes>
     </div>
   );
 }

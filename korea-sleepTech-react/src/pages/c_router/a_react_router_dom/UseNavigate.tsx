@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //! useNavigate()
@@ -22,14 +22,47 @@ function UseNavigate() {
 
   const goToHomePage = () => {
     // 추가 기능
-    
+
     navigate('/');
   }
+
+  const goToPrevPage = () => {
+    // 브라우저의 기록을 읽고 이전 경로로 이동
+    navigate(-1);
+  }
+
+  const goToOtherPage = () => {
+    //! useNaviaget 훅의 옵션
+    // - state 옵션
+    // : 네비게이션(경로)과 함께 상태 전달 가능
+    // : useLocation() 훅을 통해 접근 가능 (A 컴포넌트)
+    navigate('/router/a', { state: { userId: 12345 }});
+  }
+
+  const isAuthenticated = true; // authenticate: 인증
+
+  const handleSignUp = () => {
+    // 인증된 사용자만이 회원가입되고 홈화면으로 이동
+
+    if (isAuthenticated) {
+      navigate('/');
+    }
+  }
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/login');
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <div>
       <p>UseNavigate 페이지</p>
-      <button onClick={goToHomePage}>Home페이지로 이동</button>
+      <button onClick={goToHomePage}>Home 페이지로 이동</button>
+      <button onClick={goToPrevPage}>이전 페이지로 이동</button>
+      <button onClick={goToOtherPage}>다른 페이지로 이동</button>
+
+      <button onClick={handleSignUp}>회원가입</button>
     </div>
   )
 }

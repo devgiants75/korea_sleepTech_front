@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
+import A from './A'
+import B from './B'
 
 // cf) c_router > a_react_Router_dom > Router01.tsx
 
@@ -76,8 +78,8 @@ function Router01() {
       </ul>
 
       <Routes>
-        <Route path='a' element={} />
-        <Route path='b' element={} />
+        <Route path='a' element={<A />} />
+        <Route path='b' element={<B />} />
       </Routes>
     </div>
   )

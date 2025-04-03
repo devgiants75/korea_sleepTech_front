@@ -9,6 +9,7 @@ import './App.css'
 import Basic from '@/pages/a_basic/index'; // '@/pages/a_basic/index.tsx'와 동일
 import Hooks from '@/pages/b_hooks';
 import Router from '@/pages/c_router';
+import NaviBar from './components/NaviBar';
 
 //& 기본 Vite React 앱의 경로
 // : http://localhost:5173
@@ -16,6 +17,8 @@ function App() {
   return (
     <>
       <h1>Korea SleepTech React</h1>
+      <NaviBar />
+
       {/* Routes 태그: Route를 감싸는 컴포넌트 */}
       <Routes>
         {/* Route 태그: 단일 태그 사용 권장! */}

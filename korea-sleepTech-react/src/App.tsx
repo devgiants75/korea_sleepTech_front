@@ -8,6 +8,7 @@ import './App.css'
 //  >> import 시 폴더명 만으로 가져오기 가능!
 import Basic from '@/pages/a_basic/index'; // '@/pages/a_basic/index.tsx'와 동일
 import Hooks from '@/pages/b_hooks';
+import Router from '@/pages/c_router';
 
 //& 기본 Vite React 앱의 경로
 // : http://localhost:5173
@@ -24,6 +25,7 @@ function App() {
         */}
         <Route path='/basic' element={<Basic />} />
         <Route path='/hooks' element={<Hooks />} />
+        <Route path='/router' element={<Router />} />
       </Routes>
     </>
   )

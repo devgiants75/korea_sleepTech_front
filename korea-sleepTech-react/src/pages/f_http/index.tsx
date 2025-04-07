@@ -120,6 +120,16 @@ function Index() {
     }
   };
 
+  //# axios를 사용하는 post 요청 (전송하다)
+  const createUser = async (newUser: User) => {
+
+  }
+  
+  //# axios를 사용하는 put 요청 (수정하다)
+  const updateUser = async (id: number, updateUser: User) => {
+
+  }
+
   useEffect(() => {
     fetchUsers();
   }, []); // 마운트 시에만 실행

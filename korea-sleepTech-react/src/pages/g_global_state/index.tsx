@@ -1,5 +1,6 @@
 import React from 'react'
 import Context from './Context';
+import Zustand01 from './Zustand01';
 
 const h2Style = {
   backgroundColor: "black",
@@ -18,7 +19,7 @@ function Index() {
 
       <hr />
       <h2 style={h2Style}>2. zustand 라이브러리</h2>
-
+      <Zustand01 />
       
     </div>
   )

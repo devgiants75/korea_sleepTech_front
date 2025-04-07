@@ -122,17 +122,62 @@ function Index() {
 
   //# axios를 사용하는 post 요청 (전송하다)
   const createUser = async (newUser: User) => {
+    try {
+      // post('URL', 전송할 데이터)
+      // : 데이터를 전송하고 난 뒤 해당 데이터를 반환(응답)
+      const response = await axios.post(
+        'https://jsonplaceholder.typicode.com/users',
+        newUser,
+      );
 
+      if (users) {
+        setUsers([...users, response.data]);
+        console.log(response.data);
+      }
+
+    } catch (e) {
+      console.error('Error creating user: ', e);
+    }
   }
   
   //# axios를 사용하는 put 요청 (수정하다)
   const updateUser = async (id: number, updateUser: User) => {
+    try {
+      const response = await axios.put(
+        `https://jsonplaceholder.typicode.com/users/${id}`,
+        updateUser
+      );
 
+      if (users) {
+        setUsers(users.map(user => user.id === id ? response.data : user));
+      }
+      
+    } catch (e) {
+      console.error('Error updating user: ', e);
+    }
   }
 
   useEffect(() => {
     fetchUsers();
   }, []); // 마운트 시에만 실행
+
+  const handleEdit = (user: User) => {
+    setNewUser(user);
+
+    setEditingUserId(user.id);
+  }
+
+  const deleteUser = async (id: number) => {
+    try {
+      await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
+
+      if (users) {
+        setUsers(users.filter(user => user.id !== id));
+      }
+    } catch (e) {
+      console.error('Error deleting user: ', e);
+    }
+  }
 
   return (
     <div>
@@ -162,6 +207,8 @@ function Index() {
           <div key={user.id}>
             <h4>{user.name}</h4>
             <p>{user.email}</p>
+            <button onClick={() => handleEdit(user)}>수정</button>
+            <button onClick={() => deleteUser(user.id)}>삭제</button>
           </div>
         ))
       ) : (

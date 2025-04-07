@@ -1,3 +1,4 @@
+import { useAuthStore } from '@/stores/auth.store';
 import React from 'react'
 import { create } from 'zustand';
 
@@ -71,8 +72,11 @@ function Component() {
 
 function Zustand01() {
   const { count, decrement } = useCountStore();
+  const { user } = useAuthStore();
+
   return (
     <div>
+      <p>User(Zustand02): {user}</p>
       Count: {count}
       <button onClick={decrement}>감소</button>
       <Component />

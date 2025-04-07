@@ -39,7 +39,7 @@ function App() {
         */}
         <Route path='/router/*' element={<Router />} />
         <Route path='/router-practice/*' element={<RouterPractice />} />
-        <Route path='/review*' element={<Review />} />
+        <Route path='/review/*' element={<Review />} />
       </Routes>
     </>
   )

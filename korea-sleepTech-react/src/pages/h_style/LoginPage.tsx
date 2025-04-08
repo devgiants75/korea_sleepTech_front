@@ -8,6 +8,7 @@ import * as s from "./LoginPageStyle";
 
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function LoginPage() {
   const navigate = useNavigate(); // 로그인 후 페이지 이동을 위한 훅
@@ -28,11 +29,42 @@ function LoginPage() {
   });
 
   //# Event Handler #//
-  const handleInputOnChange = () => {};
+  const handleInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue({
+      ...inputValue,
+      [e.target.name]: e.target.value, // 현재 입력한 name(key)에 해당하는 값만 변경
+    });
+  };
 
-  const handleInputOnKeyDown = () => {};
+  const handleInputOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      // input 요소 참조 값들이 저장된 배열을 순회했을 때
+      // , Enter 키가 눌려진 이벤트 객체의 현재 DOM 요소와 일치하는 경우의 index 번호를 반환
+      let foundIndex = inputRefs.findIndex(ref => ref.current === e.currentTarget);
 
-  const handleLoginSubmitOnClick = () => {};
+      if (foundIndex === inputRefs.length - 1) {
+        // 찾은 요소가 마지막 input 창일 경우 버튼 클릭 실행
+        buttonRefs[0].current?.click(); // 요소가 존재하는지 확인하고 있으면 클릭!
+      }
+
+      // 다음 input으로 포커스 이동
+      inputRefs[foundIndex + 1].current?.focus();
+    }
+  };
+
+  const handleLoginSubmitOnClick = async () => {
+    try {
+      const response = await axios.post('http://localhost:8080/spring_boot_app/api/login', inputValue);
+
+      console.log(response);
+      alert('로그인 성공');
+
+      navigate('/main'); // 로그인 성공 시 메인 페이지로 이동
+    } catch (error) {
+      console.error('로그인 실패(존재하지 않는 api URL): ', error);
+      alert('로그인 실패');
+    }
+  };
 
   return (
     <div css={s.layout}>

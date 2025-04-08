@@ -29,28 +29,29 @@ function Todo() {
 
   //# Event Handler #//
   const handleKeyPrass = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       const input = e.target as HTMLInputElement;
 
-      if (input.value.trim() !== '') {
+      if (input.value.trim() !== "") {
         addTodo(input.value.trim());
-        input.value = '';
+        input.value = "";
       }
     }
   };
 
   const handleToggleTodo = useCallback((id: number) => {
-    setTodos(todos => // 최신의 todos 할 일 목록을 가져옴
-      todos.map(todo => 
-        todo.id === id 
-        ? {...todo, completed: !todo.completed} 
-        : todo
-      )
+    setTodos(
+      (
+        todos // 최신의 todos 할 일 목록을 가져옴
+      ) =>
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        )
     );
   }, []);
 
   const handleDeleteTodo = useCallback((id: number) => {
-    setTodos(todos => todos.filter(todo => todo.id !== id));
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
   }, []);
 
   //# Function #//
@@ -71,37 +72,47 @@ function Todo() {
     const newTodo = {
       id: nextIdRef.current,
       text,
-      completed: false
+      completed: false,
     };
 
     setTodos([...todos, newTodo]);
     nextIdRef.current += 1;
-  }
+  };
 
   return (
     <div>
       <h1>리액트 Todo 예제</h1>
       <hr />
 
-      <div>
-        <h2>My Todo List</h2>
+      <div css={s.container}>
+        <h2 css={s.title}>My Todo List</h2>
         <input
           type="text"
           placeholder="Add a new task"
           onKeyDown={handleKeyPrass}
+          css={s.input}
         />
-        <div>
-          <button onClick={() => setFilter('all')}>All(모든)</button>
-          <button onClick={() => setFilter('active')}>Active(완료 전)</button>
-          <button onClick={() => setFilter('completed')}>Completed(완료 후)</button>
+        <div css={s.buttonsContainer}>
+          <button css={s.button} onClick={() => setFilter("all")}>
+            All(모든)
+          </button>
+          <button css={s.button} onClick={() => setFilter("active")}>
+            Active(완료 전)
+          </button>
+          <button css={s.button} onClick={() => setFilter("completed")}>
+            Completed(완료 후)
+          </button>
         </div>
-        <ul>
-          {filteredTodos.map(todo => (
-            <li key={todo.id}>
-              <span onClick={() => handleToggleTodo(todo.id)}>
+        <ul css={s.todoList}>
+          {filteredTodos.map((todo) => (
+            <li key={todo.id} css={s.todoItem}>
+              <span onClick={() => handleToggleTodo(todo.id)} css={s.todoText(todo.completed)}>
                 {todo.text}
               </span>
-              <button onClick={() => handleDeleteTodo(todo.id)}>
+              <button
+                onClick={() => handleDeleteTodo(todo.id)}
+                css={s.deleteButton}
+              >
                 삭제
               </button>
             </li>

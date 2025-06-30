@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>자리표</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    .classroom {
+      display: grid;
+      grid-template-columns: repeat(5, 80px);
+      grid-gap: 15px;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* 복도 공간을 위해 4열과 5열 사이에 여백 */
+    .classroom > .seat:nth-child(5n) {
+      margin-left: 40px; /* 복도 공간 */
+    }
+
+    .seat {
+      width: 80px;
+      height: 80px;
+      background-color: #dbeafe;
+      border: 2px solid #3b82f6;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .blackboard {
+      width: 600px;
+      height: 100px;
+      align-items: center;
+      margin: 0 auto;
+      line-height: 100px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <div class="classroom">
+    <div class="seat">X</div>
+    <div class="seat">X</div>
+    <div class="seat">X</div>
+    <div class="seat">X</div>
+    <div class="seat">이준우</div>
+
+    <div class="seat">오선우</div>
+    <div class="seat">임재혁</div>
+    <div class="seat">권형준</div>
+    <div class="seat">최낙원</div>
+    <div class="seat">박미진</div>
+
+    <div class="seat">장소정</div>
+    <div class="seat">고혁재</div>
+    <div class="seat">최서윤</div>
+    <div class="seat">성재원</div>
+    <div class="seat">양현식</div>
+
+    <div class="seat">조민지</div>
+    <div class="seat">진우태</div>
+    <div class="seat">문창배</div>
+    <div class="seat">전창현</div>
+    <div class="seat">윤영서</div>
+  </div>
+
+  <div class="blackboard">📚 칠판</div>
+</body>
+</html>
